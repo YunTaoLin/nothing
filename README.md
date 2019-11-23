@@ -76,8 +76,8 @@
 
   能夠熟悉使用ES6語法(箭頭函數、解域附值)  
   要很直覺的知道使用Promise物件、callback回呼  
-  會操作瀏覽器提供的進階API（如Geolocation） 
-  知道如何封裝自己的程式碼，知道commonjs模組開發  　
+  會操作瀏覽器提供的進階API（如Geolocation）  
+  知道如何封裝自己的程式碼，知道commonjs模組開發   
   - 學習所需時間：6
 
   ---
