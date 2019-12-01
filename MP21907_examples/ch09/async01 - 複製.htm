@@ -1,0 +1,34 @@
+<meta charset="UTF-8" />
+<script>
+//async/await改寫Promise Chain
+function play1(n) {
+	  let result=setTimeout(function(){		
+		console.log("play1 =",n*n);
+		return n*n; 
+	  }, 3000);
+	  console.log("測試時間點")
+	  return 5;
+	};
+
+function play2(n) {
+	  let result= setTimeout(function () {
+		  console.log("play2 =",n+n);
+		  return n+n; 
+		}, 5000)
+	  return result;
+	};
+
+async function add1(x) {
+    try {
+	  let play1value = await play1(20);
+	  let play2value = await play2(play1value);
+	  console.log( x + play1value + play2value+"恩恩");
+	} catch(err) {
+		console.log(err); 
+    }
+}
+
+add1(10)
+</script>
+
+f

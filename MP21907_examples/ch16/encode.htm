@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>程式內容加密與解密</title>
+<link rel=stylesheet type="text/css" href="color.css">
+<script>
+window.addEventListener('load', () => {
+	runEscape.addEventListener('click', (e) => {
+		encodeURId.value = escape(myText.value)
+	})
+	runEncodeUR.addEventListener('click', (e) => {
+		encodeURId.value = encodeURI(myText.value)
+	})
+	runEncodeURIComponent.addEventListener('click', (e) => {
+		encodeURId.value = encodeURIComponent(myText.value)
+	})
+})
+</script>
+</head>
+<body>
+<h3>字串加密</h3>
+
+		請輸入想要編碼的URL或字串：<br>
+		<textarea rows=3 cols=60 id="myText"></textarea><br>
+		<button id="runEscape">escape</button>
+		<button id="runEncodeUR">encodeURI</button>
+		<button id="runEncodeURIComponent">encodeURIComponent</button>
+		<p>編碼結果：<br>
+		<textarea rows=3 cols=60 id="encodeURId"></textarea>
+
+</body>
+</html>

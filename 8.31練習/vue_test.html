@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <div class="container" id="app">
+            <div class="title">
+                <a :href="url">666</a>
+                <h1>{{title}}</h1>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js'></script>
+<script>
+    let data={
+            title:'我正在練習Vue',
+            url:'https://tw.yahoo.com/'
+        }
+    let test = new Vue({
+        el: '#app',
+        data: data
+
+
+    })
+                
+
+</script>
+
+
+
+</body>
+</html>

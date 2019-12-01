@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>3D輪播</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        body {
+            width: 100%;
+            height: 100vh;
+        }
+        
+        .wrap {
+            width: 100%;
+            height: 100%;
+            background-color: #111;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container {
+            width: 800px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            height: 600px;
+            position: relative;
+            perspective: 4000px;
+        }
+        
+        .group {
+            width: 800px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform-style: preserve-3d;
+            transform: rotateY(0deg);
+        }
+        
+        .item {
+            width: 800px;
+            height: 600px;
+            /* border: 1px solid #ccc; */
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, .5), 0 0 20px rgba(40, 96, 150, .3);
+            background-color: rgba(20, 76, 130, .9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #fff;
+            position: absolute;
+            top: 0;
+            left: 0;
+            /* filter: blur(5px); */
+        }
+        /* .item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(92, 182, 31, 0.5);
+            filter: blur(200px);
+            z-index: 1
+        } */
+        
+        .item1 {
+            transform: rotateY(0deg) translateZ(550.56px);
+        }
+        
+        .item2 {
+            transform: rotateY(72deg) translateZ(550.56px);
+        }
+        
+        .item3 {
+            transform: rotateY(144deg) translateZ(550.56px);
+        }
+        
+        .item4 {
+            transform: rotateY(-144deg) translateZ(550.56px);
+        }
+        
+        .item5 {
+            transform: rotateY(-72deg) translateZ(550.56px);
+        }
+        
+        button {
+            padding: 10px 20px;
+            font-family: '微軟正黑體';
+            font-weight: 800;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            background-color: rgb(40, 96, 150);
+            position: absolute;
+            cursor: pointer;
+        }
+        
+        button:focus {
+            outline: none;
+        }
+        
+        #left {
+            top: 50%;
+            left: 20px;
+        }
+        
+        #right {
+            top: 50%;
+            right: 20px;
+        }
+        /* ------------卡片----------- */
+        
+        .card {
+            width: 300px;
+            height: 400px;
+            position: relative;
+            background-color: #fff;
+            box-shadow: 0px 5px 25px rgba(27, 145, 223, 0.5);
+            margin: 12px;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: .8s;
+        }
+        
+        .card:hover {
+            width: 600px;
+        }
+        
+        .card .pic {
+            width: 300px;
+            height: 400px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            z-index: 10;
+        }
+        
+        .card .pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1);
+            transition: 2s .3s;
+        }
+        /* .card .pic:hover img {
+            transform: scale(1.2);
+        } */
+        /* .card .pic::after {
+            content: '';
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, .6);
+            position: absolute;
+            top: 0;
+            left: 0;
+            box-shadow: inset 0 0 25px rgba(0, 0, 0, .5);
+            opacity: 1;
+            transition: .8s;
+        } */
+        
+        .card:hover .pic::after {
+            opacity: 0;
+        }
+        /* 文字區塊樣式 start*/
+        
+        .card .txt {
+            width: 300px;
+            height: 400px;
+            background-color: #fefefe;
+            position: absolute;
+            font-family: '微軟正黑體';
+            color: #222;
+            top: 0;
+            right: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-flow: column nowrap;
+            padding: 20px;
+        }
+        
+        .card .txt h2 {
+            font-weight: 900;
+            font-size: 32px;
+            padding: 8px 0;
+        }
+        
+        .card .txt p {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 28px;
+            padding-bottom: 4px;
+        }
+        
+        .card .txt .btn {
+            display: inline-block;
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+            padding: 8px 16px;
+            border: 1px solid rgb(47, 165, 243);
+            border-radius: 200px;
+            margin-top: auto;
+            align-self: flex-end;
+            transition: .3s
+        }
+        
+        .card .txt .btn:hover {
+            background-color: rgb(47, 165, 243);
+            color: #fff;
+            font-weight: 700;
+        }
+        /* 文字區塊樣式 end */
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <button id="left">向左</button>
+        <div class="container">
+
+            <div class="group" id="rotateHandler">
+                <div class="item item1">
+                    <div class="card">
+                        <div class="pic">
+                            <img src="https://www.vscinemas.com.tw/vsweb/upload/film/film_20190828002.jpg" alt="">
+                        </div>
+                        <div class="txt">
+                            <h2>返校</h2>
+                            <p>1962年寂寥而肅殺的時代，翠華中學高三生方芮欣，意外與輔導老師張明暉相戀，在問題叢生的家庭及學校中，他成為她唯一的出路。追求自由的張明暉，另與師生殷翠涵、魏仲廷等人組織讀書會，研讀禁書，雖為高壓校園帶來一線呼吸的空間，卻也冒著生死攸關的風險。</p>
+                            <a href="#" class="btn">more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item item2">
+                    <div class="card">
+                        <div class="pic">
+                            <img src="https://www.vscinemas.com.tw/vsweb/upload/film/film_20190729008.jpg" alt="">
+                        </div>
+                        <div class="txt">
+                            <h2>天氣之子</h2>
+                            <p>高一那年夏天，帆高（醍醐虎汰朗 配音）離開位在離島的家鄉，獨自一人來到東京，拮据的生活迫使他不得不找份工作，最後來到一間專門出版奇怪超自然刊物的出版社擔任寫手。不久，東京開始下起連日大雨，彷彿暗示著帆高不順遂的未來，</p>
+                            <a href="#" class="btn">more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item item3">
+                    <div class="card">
+                        <div class="pic">
+                            <img src="https://www.vscinemas.com.tw/vsweb/upload/film/film_20190820001.jpg" alt="">
+                        </div>
+                        <div class="txt">
+                            <h2>妒火的詛咒-娜迦</h2>
+                            <p>平靜的東北村莊，幾周以來不斷發生駭人聽聞的殺人事件，死者各個面目猙獰、死狀悽慘。憤怒又害怕的村長和村民們議論紛紛、憶起多年前「娜迦發怒毀村事件」，巫師指稱平日侍奉娜迦神殿的索伊就是娜迦的化身，為免去娜迦蛇后再次大開殺戒，村民決議動用私刑、火燒索伊。</p>
+                            <a href="#" class="btn">more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item item4">
+                    <div class="card">
+                        <div class="pic">
+                            <img src="https://www.vscinemas.com.tw/vsweb/upload/film/film_20190828001.jpg" alt="">
+                        </div>
+                        <div class="txt">
+                            <h2>星際救援</h2>
+                            <p>由布萊德彼特飾演一名航太工程師，為了尋找多年前啟程外太空尋找外星智慧生物，失蹤在茫茫宇宙的父親，他不惜跨越宇宙星系間，只為了尋找父親可能仍生還的下落。</p>
+                            <a href="#" class="btn">more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item item5">
+                    <div class="card">
+                        <div class="pic">
+                            <img src="https://www.vscinemas.com.tw/vsweb/upload/film/film_20190729008.jpg" alt="">
+                        </div>
+                        <div class="txt">
+                            <h2>天氣之子</h2>
+                            <p>高一那年夏天，帆高（醍醐虎汰朗 配音）離開位在離島的家鄉，獨自一人來到東京，拮据的生活迫使他不得不找份工作，最後來到一間專門出版奇怪超自然刊物的出版社擔任寫手。不久，東京開始下起連日大雨，彷彿暗示著帆高不順遂的未來，</p>
+                            <a href="#" class="btn">more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button id="right">向右</button>
+
+
+        <script>
+            let left = document.getElementById('left');
+            let right = document.getElementById('right');
+            let rotateHandler = document.getElementById('rotateHandler')
+            let page = 0;
+            let toPage = 0;
+            left.addEventListener('click', function() {
+                toPage += 72;
+                let id = setInterval(function() {
+                    console.log(id)
+                    page++;
+                    rotateHandler.style.transform = "rotateY(" + page + "deg)";
+                    if (page >= toPage) clearInterval(id);
+                }, 5)
+            })
+
+
+            right.addEventListener('click', function() {
+                toPage -= 72;
+                let id = setInterval(function() {
+                    page--;
+                    rotateHandler.style.transform = "rotateY(" + page + "deg)";
+                    if (page <= toPage) clearInterval(id);
+                }, 5)
+
+
+            })
+        </script>
+
+
+
+
+    </div>
+</body>
+
+</htm>

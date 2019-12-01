@@ -1,0 +1,11 @@
+<script>
+//具名函式計算階層
+
+var myfunc= function factorial(n){	
+	let x = (n == 1 ? n : n * factorial(n - 1));
+	console.log( n + " > " + x)
+    return x;
+};		
+
+console.log( "5!=" + myfunc(5))
+</script>

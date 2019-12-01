@@ -1,0 +1,19 @@
+<meta charset="UTF-8" />
+<script>
+
+array1=[10, 20, 30, 40, 50];
+console.log("原始陣列", array1)
+//entries()
+var iterator1 = array1.entries();
+console.log( iterator1.next().value );  //  Array [0, 10]
+
+//values()  
+var iterator1 = array1.values();
+console.log( iterator1.next().value ); // 10
+
+//filter()
+var filtered = array1.filter(value => value > 25);
+console.log( filtered )  // [30, 40, 50]
+
+</script>
+

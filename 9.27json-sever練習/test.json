@@ -1,0 +1,71 @@
+{
+  "records": [
+    {
+      "id": "1",
+      "spot_name": "台南市渡頭里",
+      "type": "NewTaipei",
+      "company": "中華電信",
+      "district": "新莊區",
+      "address": "702",
+      "apparatus_name": "新北市新莊區公所",
+      "twd97X": "295465.60",
+      "twd97Y": "2769821.70",
+      "wgs84aX": "121.450556",
+      "wgs84aY": "25.035833",
+      "latitude": "25.035848",
+      "longitude": "121.450543"
+    },
+    {
+      "id": "2",
+      "spot_name": "台南市渡頭里",
+      "type": "NewTaipei",
+      "company": "中華電信",
+      "district": "新莊區",
+      "address": "702",
+      "apparatus_name": "新北市新莊區公所",
+      "twd97X": "295465.60",
+      "twd97Y": "2769821.70",
+      "wgs84aX": "121.450556",
+      "wgs84aY": "25.035833",
+      "latitude": "25.035848",
+      "longitude": "121.450543"
+    },
+    {
+      "spot_name": "我家",
+      "type": "NewTaipei",
+      "company": "中華電信",
+      "district": "新莊區",
+      "address": "242新北市新莊區中正路176號1樓",
+      "apparatus_name": "新北市新莊區公所",
+      "twd97X": "295465.60",
+      "twd97Y": "2769821.70",
+      "wgs84aX": "121.450556",
+      "wgs84aY": "25.035833",
+      "latitude": "25.035848",
+      "longitude": "121.450543",
+      "id": "3"
+    },
+    {
+      "spot_name": "善化鎮啤酒工廠",
+      "type": "台南",
+      "company": "中華電信",
+      "district": "新莊區",
+      "id": "K8PFmLL"
+    },
+    {
+      "spot_name": "水雉生態園區",
+      "type": "台南",
+      "company": "中華電信",
+      "district": "新莊區",
+      "id": "OA-9Vn3"
+    },
+    {
+      "spot_name": "水果大王",
+      "id": "eg-R3NT"
+    },
+    {
+      "spot_name": "544115",
+      "id": "hncw3gR"
+    }
+  ]
+}

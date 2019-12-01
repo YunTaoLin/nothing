@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>mouse button事件</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+請用滑鼠在我身上點擊一下
+<div id="msgshow"></div>
+<IMG SRC="images/17.jpg" WIDTH="200" id="myImg" BORDER="0">
+<script>
+var msg = document.querySelector('#msgshow');
+myImg.addEventListener("mouseup", e => {
+	if (typeof e === 'object') {
+		switch (e.button) {
+		  case 0:
+			msg.innerHTML="您按下左鍵";
+			break;
+		  case 2:
+			msg.innerHTML='您按下右鍵.';
+			break;
+		  default:
+		    msg.innerHTML=`button value=${e.button}`;
+    }
+  }
+});
+</script>
+</body>
+</html>

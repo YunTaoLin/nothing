@@ -1,0 +1,49 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<meta charset="UTF-8">
+<title>clear Local Storage</title>  
+<link rel=stylesheet type="text/css" href="color.css">
+<script> 
+window.addEventListener('load', () => {
+		if(typeof(Storage)=="undefined")
+		{
+		    alert("Sorry!!您的瀏覽器不支援Web Storage");		
+		}else{		
+			btn_save.addEventListener("click", saveToLocalStorage);
+			btn_load.addEventListener("click", loadFromLocalStorage); 
+			btn_clear.addEventListener("click", clearLocalStorage); 
+		}
+})
+
+function saveToLocalStorage(){
+	  localStorage.username = inputname.value;
+  	  show_LocalStorage.innerHTML= "儲存成功!";
+}
+
+function loadFromLocalStorage(){	
+	if (localStorage.username) { 
+		show_LocalStorage.innerHTML = localStorage.username +" 您好，很高興見到您!";
+	}else{
+		show_LocalStorage.innerHTML = "無資料";	
+	}
+}
+
+function clearLocalStorage(){		
+		localStorage.clear();
+		loadFromLocalStorage();
+}
+
+</script> 
+</head> 
+<body> 
+<body> 
+<img src="images/girl.jpg" /><br />
+    請輸入您的姓名：<input type="text" id="inputname" value=""><br />  
+   <div id="show_LocalStorage"></div><br />
+    <button id="btn_save">儲存至local storage</button> 
+    <button id="btn_load">從local storage讀取資料</button> 
+    <button id="btn_clear">清除local storage資料</button> 
+</body> 
+</body> 
+</html>

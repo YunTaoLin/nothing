@@ -1,0 +1,25 @@
+<meta charset="UTF-8" />
+<script>
+//Promise Chain
+function play1(n) {
+    return new Promise((resolve, reject) => {
+	  setTimeout(function(){		
+		resolve(n*n); 
+	  }, 3000);
+	})
+};
+function play2(n) {
+    return new Promise((resolve, reject) => {
+	  setTimeout(function () {
+		  resolve(n+n);
+		}, 5000)
+	})
+};
+
+play1(5).then((e) => {
+  console.log("play1執行了 =", e);
+  return play2(e);
+}).then((e1) => {
+	console.log("play2執行了 =", e1);
+});
+</script>

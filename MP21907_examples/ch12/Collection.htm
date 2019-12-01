@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html> 
+<head> 
+<meta charset="UTF-8">
+<title>集合的存取</title>
+<script>
+function check()
+{
+	n = document.images.length;
+	document.myform.result.value = "images物件的數目：" + n
+	+ "\nimage1的圖片寬度：" + document.images[0].width
+	+ "\nimage2的邊框寬度：" + document.images["myimg2"].border
+	+ "\nimage3的名稱：" + document.all["myimg3"].name;
+	+ "\n超連結的href：" + document.links.item.href;
+}
+</script>
+</head>
+<body>
+<form name=myform>
+<textarea name=result rows=5 cols=60></textarea><br> 
+<input type="button" value="存取images物件屬性" name="mybtn" onclick="check()">
+</form>
+<img src="images/01.jpg" width="100" border="0" name="myimg1">
+<img src="images/02.jpg" width="150" border="0" name="myimg2">
+<img src="images/03.jpg" width="200" border="0" name="myimg3">
+<a href="https://www.google.com/">GOOGLE</a>
+</body>
+</html>

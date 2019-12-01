@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="Zn-TW">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<script>
+	function ToBig(){
+		let box = document.getElementById("box");
+		//取得我要的CSS屬性，因為是寫在CSS內，而不是HTML，所以不能直接取得屬性。
+		let styles = window.getComputedStyle(box);
+		let style = styles.getPropertyValue("width")
+		style = parseInt(style)
+
+		let ID=window.setInterval(() =>{
+			if(style>200){clearInterval(ID);return;}
+			style+=1;
+			box.style.width=style+"px";
+			box.style.height=style+"px";
+		},10)
+
+	}
+</script>
+<style>
+	/*.box{width: 50px;height:50px;background-color: #FF0000;
+		position: absolute;right: 0;top: 0;}*/
+</style>
+</head>
+<body>
+	<div  id="box"  style="width: 50px;height:50px;background-color: #FF0000;
+		position: absolute;right: 0;top: 0;" onclick="ToBig()"
+		>
+	</div>
+</body>
+</html>

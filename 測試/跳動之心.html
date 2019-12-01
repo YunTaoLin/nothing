@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>如何用css做個心跳動畫-井蛙視頻，歡迎關注</title>
+
+<style>
+
+div{
+
+background-color:tomato;
+
+width:100px; height:100px;
+
+position:relative;
+
+top:100px; left:50%;
+
+transform: rotate(-45deg);
+
+-webkit-animation:xintiao ease 1s infinite;
+
+animation:xintiao ease 1s infinite;
+/*border: 1px solid #000;*/
+
+}
+
+div:before{
+
+content:"";
+
+width:100px; height:100px;
+
+border-radius:50%;
+
+background-color:tomato;
+
+position:absolute;
+
+top:-50px; left:0;
+/*border: 1px solid #000;*/
+
+}
+
+div:after{
+
+z-index:-1;
+
+content:"";
+
+width:100px;
+
+height:100px;
+
+border-radius:50%;
+
+background-color:tomato;
+
+position:absolute;
+
+top:0px;
+
+left:50px;
+/*border: 1px solid #000;*/
+
+}
+
+@keyframes xintiao{
+
+0%{
+
+transform: rotate(-45deg) scale(1);
+
+}
+
+75%{
+
+transform: rotate(-45deg) scale(1.2);
+
+}
+
+100%{
+
+transform: rotate(-45deg) scale(1);
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div></div>
+
+</body>
+
+</html>
+
+
+
+原文網址：https://kknews.cc/code/9meemzq.html

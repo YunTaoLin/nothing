@@ -1,0 +1,15 @@
+<script>
+//tagged template string
+//使用rest參數
+let name = "Jennifer";
+let age = "18";
+
+//定義intro函式
+function intro(strings, ...args){
+  console.log(strings);
+  console.log(args);
+}
+
+//模板字串前面加上intro
+const sentence = intro`My name is ${name}, I am ${age} years old`;
+</script>

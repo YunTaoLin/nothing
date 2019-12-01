@@ -1,0 +1,25 @@
+<meta charset="UTF-8" />
+<script>
+var account = (function() {
+  var balance = 1000;     //帳戶初始金額
+  return {
+    deposit: function(d) {  //存款
+      balance+=d;
+    },
+    withdraw: function(w) {  //提款
+      balance-=w;
+    },
+    value: function() {
+      return balance;
+    }
+  };
+})();
+
+console.log(account.value()); // 顯示餘額
+account.deposit(500);         //存入500
+console.log(account.value()); 
+account.withdraw(100);        //提出100
+console.log(account.value()); 
+
+account = null;  //解除引用
+</script>

@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html> 
+<head> 
+<meta charset="UTF-8">
+<title>sticky定位</title> 
+<style>
+*{font-size:25px}
+.box1 {
+  width: 300px;
+  height:  50px;
+  background: #FFD23F;
+  color: white;
+  margin:10px;
+}
+.box2 {
+  width:  300px;
+  height:  50px;
+  background: #3BCEAC;
+  color: white;
+  margin:10px;
+}
+#three {
+  position: -webkit-sticky;  /*Safari*/
+  position: sticky;
+  top:10px;
+  border:5px solid #000000;
+  background: #540D6E;
+}
+</style>
+</head> 
+<body> 
+<div class="box1"></div>
+<div class="box2"></div>
+<div class="box1" id="three">sticky</div>
+<div class="box2"></div>
+<div class="box1"></div>
+<div class="box2"></div>
+<div class="box1"></div>
+<div class="box2"></div>
+</body> 
+</html> 

@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>滑鼠觸發事件</title>
+
+</head>
+<body>
+<font size=6>現在的滑鼠游標位置：</font>
+<INPUT TYPE="text" id="xy">
+<br><font size=5>請將滑鼠游標移到月亮圖片上</font>
+<IMG SRC="images/13.JPG" WIDTH="200" BORDER="0" id="moonTarget" onmouseover="mouseTarget()">
+<br><font size=5>請在地球圖片上按一下滑鼠左鍵</font>
+<IMG SRC="images/14.JPG" WIDTH="200" BORDER="0" id="earthTarget">
+
+<script>
+let earthTarget = document.getElementById('earthTarget');
+
+let mouseTarget = () => {
+  alert('嘿!你碰到月亮囉!\n所以觸發了onMouseOver事件')
+};
+earthTarget.addEventListener("click", e => {
+  alert('嘿!你在地球圖片上按了一下滑鼠左鍵喔!\n所以觸發了onClick事件')
+});
+
+document.addEventListener("mousemove", e => {
+    document.getElementById("xy").value = e.clientX+","+e.clientY;
+});
+</script>
+</body>
+</html>

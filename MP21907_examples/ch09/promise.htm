@@ -1,0 +1,16 @@
+<meta charset="UTF-8" />
+<script>
+//Promise
+let myPromise = new Promise((resolve, reject) => {
+  setTimeout(function(){
+	console.log("setTimeout執行了");
+    resolve("ok"); 
+  }, 3000);
+});
+
+myPromise.then((successMessage) => {
+  console.log("成功!", successMessage);
+}).catch((error) => {
+  console.log("失敗! ", error);
+});
+</script>

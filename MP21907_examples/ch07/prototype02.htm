@@ -1,0 +1,15 @@
+<script>
+function person(username) {
+    this.username = username;
+}
+
+person.prototype.run = function () {
+    console.log(this.username, "正在跑馬拉松!");
+};
+
+var myfriend1= new person("jennifer");
+var myfriend2= new person("Brian");
+myfriend1.run()
+myfriend2.run()
+
+</script>

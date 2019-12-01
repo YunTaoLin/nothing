@@ -1,0 +1,13 @@
+<script>
+function Person(name, age) {   //建構函數建立類別
+  this.name = name;
+  this.age = age;
+}
+
+Person.prototype.showInfo= function () {   //定義Person類別的showInfo方法
+  return '(' + this.name + ', ' + this.age + ')';
+};
+
+var girl = new Person('eileen', '18');   //物件實體
+console.log(girl)
+</script>

@@ -1,0 +1,11 @@
+<script>
+//有回傳值的函式
+
+function myAvg(stu_Name='', stu_Math = 0, stu_Eng = 0) {  
+	let stu_Avg =( stu_Math + stu_Eng ) / 2;
+	return stu_Avg;         //回傳值
+}
+
+let avg = myAvg("Eileen",90,100);  //變數avg接收myAvg函式回傳值        
+console.log("平均成績：" + avg); 
+</script>

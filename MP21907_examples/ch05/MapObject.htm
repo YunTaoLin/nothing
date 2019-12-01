@@ -1,0 +1,26 @@
+<meta charset="UTF-8" />
+<script>
+var myMap = new Map();
+
+myMap.set('Eileen', [95, 85, 62]);
+myMap.set('Jennifer', [60, 54, 90]);
+myMap.set('Brian', [80, 90, 85]);
+
+//遍歷Map元素
+myMap.forEach(function(value, key, map) {
+    console.log(key, value);
+});
+
+console.log( "***********" )
+
+console.log( myMap.get('Jennifer') )    // May
+console.log( myMap.has('Joan') )    // false
+console.log( myMap.size )    // 元素個數：3
+
+myMap.delete('Jennifer') 
+console.log( myMap.size )    // 元素個數： 2
+
+myMap.clear()
+console.log(myMap.size)    // 元素個數： 0
+
+</script>

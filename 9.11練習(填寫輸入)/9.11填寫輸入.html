@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        font-family: '微軟正黑體';
+        font-weight: 600;
+        box-sizing: border-box;
+    }
+    .u-radius{
+        border-radius: 12px;
+        overflow: hidden;
+    }
+    html,body{
+        height: 100%;
+        width: 100%;
+        /* overflow: hidden; */
+        background-color: #41B784;
+        font-family: '微軟正黑體';
+    }
+    .container{
+        width: 70%;
+        margin: 0 auto;
+        border-radius: 12px;
+        padding: 8px 20px;
+        /* border: 1px solid #333; */
+    }
+    .bgc-white{
+        background-color: #fff;
+    }
+    .inputarea{
+        margin-top: 60px;
+        margin-bottom: 32px;
+        background-color: #444;
+    }
+    .input_inner{
+        width: 100%;
+        background-color: #fff;
+        border-radius: 12px;
+        height: 80px;
+    }
+    .row{
+        display: flex;
+    }
+    .col-3{
+        width:25%;
+        padding: 0 12px;
+       
+    }
+    .col-4{
+        width:33.33334%;
+    }
+    .col-6{
+        width:50%;
+        padding: 0 12px;
+    }
+    .col-9{
+        width:75%;
+        padding: 0 12px;
+    }
+    input{
+        width: 100%;
+        height: 72px;
+        font-size: 32px;
+        border-radius: 12px;
+        outline: none;
+        border: none;
+        margin: 4px ;
+    }
+    .menu,.menu:focus{
+        width: 100%;
+        height: 72px;
+        font-size: 32px;
+        margin: 4px 0;
+        padding: 0 25%;
+        border: none;
+        text-align: center;
+        outline: none;
+    }
+    .show{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 4px 0;
+        font-size: 0;
+    }
+    .show_item{      
+        padding: 0 ;
+        display: flex;
+        margin: 8px 0;        
+    }
+    .show .title{
+        display: inline-block;
+        font-size: 24px;
+        width: 75%;
+        background-color: rgb(255, 211, 13);
+        margin: 0;
+        line-height: 48px;
+        text-align: center;
+        margin: 0;
+        letter-spacing: 5px;
+    
+    }
+    .index{
+        width: 25%;
+        background-color: #444;
+        display: inline-block;
+        font-size: 24px;
+        line-height: 48px;
+        text-align: center;
+        color: #fefefe;
+        margin: 0;
+    }
+    .show .context{
+        font-size: 24px;
+        width: 60%;
+        /* background-color: #faf; */
+        margin: 0 16px;
+        line-height: 48px;
+    }
+
+    </style>
+</head>
+<body>
+    <div id="app"> 
+
+        <div class="container inputarea" >
+            <div class="input_inner">
+                <div class="row">
+                    <div class="col-3">
+                        <select name="" id="" class="menu" v-model='input.type'>
+                            <option value="類型壹">類型壹</option>
+                            <option value="類型貳">類型貳</option>
+                            <option value="類型參">類型參</option>
+                            <option value="類型肆">類型肆</option>
+                            <option value="類型伍">類型伍</option>
+                        </select>
+                    </div>
+                    <div class="col-9">
+                        <input type="text"
+                         v-model='input.title'
+                         @keyup.enter='inputhandler' 
+                        >
+                    </div>
+                 </div>
+            </div>
+        </div>
+
+
+        <div class="container bgc-white">
+            <div class="show">
+                <div class="col-6 show_item" v-for='(item,index) in menu'>
+                    <div class="col-4 u-radius" >
+                        <p class="index">{{index+1}}</p>
+                        <p class="title">{{item.type}}</p>
+                    </div>
+                    <a class="context">{{item.title}}</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js'></script>
+    <script src="9.12.js"></script>
+</body>
+</html>

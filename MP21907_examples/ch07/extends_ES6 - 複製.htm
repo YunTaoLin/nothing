@@ -1,0 +1,29 @@
+﻿<meta charset="UTF-8" />
+<script>
+class person{
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  showInfo() {
+    return "姓名:" + this.name + ',年齡：' + this.age + '歲';
+  }
+}
+
+
+class student extends person{
+	constructor(username,age,tel) {
+		super(username,age);   //對應父類別的name,age
+		this.tel=tel;
+	}	
+
+}
+var andy = new student("andy",20);
+var john = new person("john",18);
+
+console.log(andy.showInfo()) 
+console.log(john.showInfo()) 
+console.log(andy.username) 
+console.log(andy.name) 
+</script>

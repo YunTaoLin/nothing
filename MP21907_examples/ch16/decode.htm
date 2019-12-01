@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>字串加密</title>
+<link rel=stylesheet type="text/css" href="color.css">
+<script>
+window.addEventListener('load', () => {
+	
+		runUnscape.addEventListener('click', (e) => {
+			try {
+				encodeURId.value = unescape(myText.value)
+			} catch(e) { 
+				encodeURId.value = e; 
+			}
+		})
+		runDecodeURI.addEventListener('click', (e) => {
+			try {
+				encodeURId.value = decodeURI(myText.value)
+			} catch(e) { 
+				encodeURId.value = e; 
+			}
+		})
+		runDecodeURIComponent.addEventListener('click', (e) => {
+			 try {
+				encodeURId.value = decodeURIComponent(myText.value);
+			 } catch(e) { 
+				encodeURId.value = e; 
+			 }
+		})
+})
+</script>
+</head>
+<body>
+<h3>字串解密</h3>
+
+		請輸入想要解密的URL或字串：<br>
+		<textarea rows=3 cols=60 id="myText"></textarea><br>
+		<button id="runUnscape">unescape</button>
+		<button id="runDecodeURI">decodeURI</button>
+		<button id="runDecodeURIComponent">decodeURIComponent</button>
+		<p>解密結果：<br>
+		<textarea rows=3 cols=60 id="encodeURId"></textarea>
+
+</body>
+</html>

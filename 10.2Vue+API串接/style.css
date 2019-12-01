@@ -1,0 +1,172 @@
+@charset "UTF-8";
+* {
+  font-family: '微軟正黑體';
+  font-weight: 700;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: #42B785;
+}
+
+.container {
+  width: 1000px;
+  margin: auto;
+  position: absolute;
+  top: 25vh;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+form {
+  width: 100%;
+  background-color: #35485E;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 8px 4px;
+  border-radius: 10px;
+}
+
+form input {
+  padding: 5px 20px;
+  font-size: 24px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: none;
+}
+
+form input:focus {
+  outline: none;
+}
+
+form input[type="text"] {
+  width: 380px;
+}
+
+form input[type="email"] {
+  width: 380px;
+}
+
+form #submit {
+  width: 100px;
+  background-color: #F9D35B;
+  cursor: pointer;
+}
+
+form button {
+  width: 100px;
+  background-color: #F9D35B;
+  padding: 4px 20px;
+  font-size: 20px;
+  cursor: pointer;
+  border: none;
+}
+
+form button:focus {
+  outline: none;
+}
+
+.contact_list {
+  background-color: #fefefe;
+  height: 60vh;
+  overflow: auto;
+  margin: 20px 0;
+  border-radius: 10px;
+}
+
+.contact_list ul {
+  padding: 0;
+  margin: 0;
+}
+
+.contact_list ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 50px;
+  padding: 12px 50px;
+  position: relative;
+}
+
+.contact_list ul li .index {
+  background-color: #35485E;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: #fefefe;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contact_list ul li .username {
+  height: 100%;
+  background-color: #F9D35B;
+  line-height: 50px;
+  margin: 0 20px;
+  width: 200px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.contact_list ul li .email {
+  height: 100%;
+  line-height: 50px;
+  width: 400px;
+  text-align: center;
+  margin-right: 20px;
+}
+
+.contact_list ul li button {
+  width: 50px;
+  height: 100%;
+  font-size: 16px;
+  border-radius: 50%;
+  margin: 0 4px;
+  color: #fefefe;
+  border: none;
+  cursor: pointer;
+}
+
+.contact_list ul li button:focus {
+  outline: none;
+}
+
+.contact_list ul li #updata {
+  background-color: #0f5c15;
+}
+
+.contact_list ul li #del {
+  background-color: #d84545;
+}
+
+.bgc::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  pointer-events: none;
+}
+/*# sourceMappingURL=style.css.map */

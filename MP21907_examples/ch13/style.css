@@ -1,0 +1,10 @@
+body{text-align:center}
+#msgshow{
+	border:2px #ccc solid;
+	background-color:#F6FEAA;
+	height:50px;
+	width:300px;
+	margin:0 auto;
+	line-height:50px;
+	border-radius:20px;
+}

@@ -1,0 +1,17 @@
+<meta charset="UTF-8" />
+<script>
+var person = {
+  name: '',
+  showName: function () {
+    return this.name;
+  }
+}
+
+var student = Object.create(person,{
+	age: { value: 18}
+});
+
+student.name="andy";
+console.log(student.showName());  //andy
+console.log("age = ", student.age)  //age=18
+</script>

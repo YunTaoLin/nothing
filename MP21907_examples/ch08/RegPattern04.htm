@@ -1,0 +1,22 @@
+<meta charset="UTF-8" />
+<script>
+console.group();
+	var target = "Life was like a box of chocolates.\n You never know what you're gonna get.\r\n--Forrest Gump"
+	reg = /\r\n|\n/g;
+	var arr = target.split(reg);   //以\n或\r\n切割字串
+	arr.forEach(function(value, key) {   
+	  console.log(key, value);   //輸出切割後的字串
+	})
+	console.log(reg.source)   //source屬性
+	console.log(reg.flags)    //flags屬性
+console.groupEnd();
+
+//lastIndex屬性
+console.group();
+	var reg=/you/ig;
+	var m1;
+	while ((m1 = reg.exec(target)) !== null) {
+		console.log("找到", m1[0], "下一次搜尋開始位置", reg.lastIndex); 
+	}
+console.groupEnd();
+</script>

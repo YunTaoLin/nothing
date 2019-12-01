@@ -1,0 +1,12 @@
+<script>
+//函式參數
+
+function myScore(stu_Name,stu_Math,stu_Eng) {         //定義myScore函式，並設定3個參數
+	console.log("引數數量：" + arguments.length );
+	console.log("學生姓名："+stu_Name+"數學成績："+stu_Math+"英文成績："+stu_Eng);
+}
+
+myScore("Eileen","90","100");   //呼叫myScore函式並傳入3個引數
+myScore("Jennifer","60");       //呼叫myScore函式並傳入2個引數
+myScore("May","70","90","100"); //呼叫myScore函式並傳入4個引數
+</script>

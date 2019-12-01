@@ -1,0 +1,10 @@
+<script>
+//remove reference
+var myfunc = function(a,b){   
+	return a + "+" + b + "=" + (a + b);
+};
+
+console.log(myfunc(10,20))   //返回10+20=30
+myfunc = null;  //重置myfunc
+console.log(myfunc(10,20))   //error: myfunc is not a function
+</script>

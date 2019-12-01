@@ -1,0 +1,11 @@
+<script>
+function func() {
+  var a = 10;
+  function funcInside(b) {
+      console.log("a+b=", a + b );
+  }
+  return funcInside;  //傳回funcInside函式
+}
+var newFunc = func();  //newFunc接收的是funcInside函式
+newFunc(5);   //a+b=15
+</script>

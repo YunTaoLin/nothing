@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+</head>
+<body>
+    <div id="test"></div>
+
+    <script>
+        let width = window.screen.width;
+        let height= window.screen.height;
+        // alert(width+'*'+height);
+        
+        
+        
+
+        ajax01 = new XMLHttpRequest();
+        ajax01.open("GET","ajax.php",true);
+        ajax01.onreadystatechange =() =>{
+            if (ajax01.readyState == 4) {//完成狀態有好幾種，4代表資料傳回完成
+                var data = ajax01.responseText;
+                var txt = document.getElementById("test");
+                txt.innerHTML=data;
+            }
+
+
+        };//狀態完成時所要執行的函式
+        ajax01.send(null);//送出
+
+    </script>
+</body>
+</html>

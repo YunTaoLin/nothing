@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>903練習</title>
+
+    <style>
+        .container {
+            width: 60%;
+            /* background-color: #aaf; */
+            margin: 40vh auto 0;
+            /* border: 1px solid #333; */
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .arrow-left,
+        .arrow-right {
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            background-color: #aaf;
+            text-decoration: none;
+            color: #333;
+            display: inline-block;
+            text-align: center;
+            line-height: 50px;
+            position: absolute;
+        }
+        
+        .arrow-left {
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+        }
+        
+        .arrow-right {
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+        }
+        
+        .show {
+            width: 50%;
+            padding: 5px;
+            margin: 0 auto;
+            background-color: #aff;
+            border-radius: 10px;
+            border: 2px solid #d1d2d3;
+        }
+        
+        .show p,
+        .show h1,
+        .show a {
+            text-decoration: none;
+            color: #333;
+            text-align: center;
+        }
+        /* ----------動畫---------- */
+        
+        .fade-enter,
+        .fade-leave-to {
+            opacity: 0;
+        }
+        
+        .fade-enter-active,
+        .fade-leave-active {
+            transition: opacity .5s;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="container" id="app">
+        <transition name='fade' mode='out-in'>
+            <div class="show" v-on:click="To()" v-for="(item,i) in menu" v-if="i === index" :key='item.title'>
+                <p>{{i +1 }}</p>
+                <h1><a :href="today.link">{{item.title}}</a></h1>
+            </div>
+        </transition>
+        <!-- 如果不是第一天就顯示 -->
+        <a href="#" v-if="index != 0" class="arrow-left" v-on:click=' changeIndex(-1) '>pre</a>
+        <!-- 如果不是最後一天就顯示 -->
+        <a href="#" v-if="index != total-1" class="arrow-right" v-on:click='changeIndex(1) '>next</a>
+    </div>
+
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js '></script>
+    <script src="all.js"></script>
+
+</body>
+
+</html>

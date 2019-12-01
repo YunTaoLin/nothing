@@ -1,0 +1,17 @@
+<script>
+//Number.EPSILON檢測兩個浮點數是否相等
+
+console.log("Number.EPSILON = " + Number.EPSILON)
+function checkNumber (left, right) {
+  return left + "===" + right + " >> " + (left == right);
+}
+function checkNumberWithEPSILON (left, right) {
+  return left + "===" + right + " >> " + (Math.abs(left - right) < Number.EPSILON);
+}
+
+var n1 = 0.1 + 0.2;
+var n2 = 0.3;
+
+console.log( checkNumber(n1, n2) ) // false
+console.log( checkNumberWithEPSILON(n1, n2) ) // true
+</script>

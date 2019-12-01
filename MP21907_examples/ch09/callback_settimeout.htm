@@ -1,0 +1,30 @@
+<meta charset="UTF-8" />
+<script>
+//callback回呼函式
+function play1(callback){
+	setTimeout(function () {
+	  console.log('play1執行了')
+	  callback("ok");
+	}, 8000)
+}
+function play2(callback){
+	setTimeout(function () {
+	  console.log('play2執行了')
+	  callback1("ok");
+	}, 5000)
+}
+
+
+console.log("程式開始");
+play1(function(e){
+	if (e==="ok")   //檢查play1的回傳值
+	{
+		play2(function(e){			
+			if (e==="ok")  //檢查play2的回傳值
+			{
+				console.log("程式結束");
+			}
+		});
+	}
+});
+</script>

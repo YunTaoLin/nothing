@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>瀏覽器資訊</title>
+</head>
+<body>
+<div></div>
+<script>
+function checkBrowser(){
+	var agent = navigator.userAgent.toLowerCase();
+	let browser = "";
+	if(agent.indexOf("msie")!=-1 || agent.indexOf("trident")!=-1 || agent.indexOf("Edge")!=-1){
+		browser = "IE";
+		if (agent.indexOf("trident")!=-1) {   //IE 版本>=11
+                var rv = agent.indexOf('rv:');
+                browser = "IE" + parseInt(agent.substring(rv + 3, agent.indexOf('.', rv)), 10);
+        }
+        var edge = agent.indexOf('Edge/');
+        if (agent.indexOf("Edge")!=-1) {  // 判斷Edge版本              
+               browser = "Edge" + parseInt(agent.substring(edge + 5, agent.indexOf('.', edge)), 10);
+        }
+	}else{
+		if(agent.indexOf("firefox")!=-1){
+			browser="firefox";
+		}else{
+			if (agent.indexOf("safari")!=-1 && agent.indexOf("chrome")==-1){
+				browser="safari";		
+			}else{
+				if ((agent.indexOf("safari")!=-1 && agent.indexOf("chrome")!=-1)){
+					browser="chrome";
+				}else{
+					browser="other";
+				}
+			}
+		}
+	}
+	return browser;
+}
+
+function dateformat(){
+	var d = new Date();
+	var dateString = d.getUTCFullYear() +"-"+ (d.getUTCMonth()+1) +"-"+ d.getUTCDate() + " " + d.getUTCHours() + ":" + d.getUTCMinutes();
+	return dateString;
+}
+
+let str = '目前網頁文件的URL ： ' + location.pathname + '<br>';
+str += "最近一次修改的時間：" + dateformat(document.lastModified) + "<br>";
+str += "你用的瀏覽器是："+ checkBrowser() + "<br>";
+str += "你的螢幕解析度是："+screen.width+" * "+screen.height + "<br>";
+str += "你用的作業系統平台是："+ navigator.platform + "<br>";
+str += "上線狀態："+navigator.onLine;
+
+let div = document.querySelector('div');
+div.innerHTML = str;
+</script>
+</body>
+</html>

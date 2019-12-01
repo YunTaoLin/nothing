@@ -1,0 +1,17 @@
+<meta charset="UTF-8" />
+<script>
+/*setTimeout()方法*/
+function startTime(now) {
+	var today = new Date();
+	var t = today.toLocaleTimeString();  //取得現在時間
+ 
+	console.log(`現在時間：${t}`);
+ 
+	if (parseInt((today - now) / 1000)>=5)
+	{
+		clearInterval(tID);
+		console.log("停止計時.")
+	}
+}
+var tID = setInterval(startTime, 1000, new Date());
+</script>

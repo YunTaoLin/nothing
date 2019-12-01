@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>10.2vue+api</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+
+</style>
+
+<body>
+    <div class="container" id="app">
+        <!-- <section v-if='loading' style="text-align: center">
+            Loading
+        </section> -->
+        <section>
+            <form>
+                <input type="text" name="username" id="username" placeholder="請輸入姓名" v-model.trim='input.name'>
+                <input type="email" name="email" id="email" placeholder="請輸入信箱" v-model.trim='input.email'>
+                <input id="submit" type="submit" @click.prevent='submit' value="送出">
+                <button @click.prevent='cancel'>取消</button>
+            </form>
+            <div class="contact_list">
+                <ul>
+                    <li v-for='(item,index) in contacts'>
+                        <div class="index">{{item.id}}</div>
+                        <div class="username">{{item.name}}</div>
+                        <div class="email">{{item.email}}</div>
+                        <button id="updata" @click='updata(index)'>修改</button>
+                        <button id="del" @click='del(index)'>刪除</button>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    </div>
+
+
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0-beta.1/axios.min.js'></script>
+    <script src="all.js"></script>
+</body>
+
+</html>

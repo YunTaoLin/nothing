@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+        list-style: none;
+        font-family: '微軟正黑體';
+    }
+    .wrap{
+        display: flex;
+        width: 100%;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(10deg, rgb(252, 244, 141),rgb(47, 165, 243))
+    }
+    .card{
+        width: 300px;
+        height: 400px;
+        position: relative;
+        background-color: #fff;
+        box-shadow: 0px 5px 25px rgba(27, 145, 223, 0.5);
+        margin: 12px;
+        border-radius: 20px;
+        overflow: hidden;
+        transition: .8s;
+        
+    }
+    .card:hover{
+        width: 600px;
+    }
+    .card .pic{
+        width: 300px;
+        height: 400px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        z-index: 10;
+    }
+    .card .pic img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: scale(1);
+        transition: 2s .3s ;
+    }
+    .card .pic:hover img{
+        
+        transform: scale(1.2);
+    }
+    
+    .card .pic::after{
+        content: '';
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0,0,0,.6);
+        position: absolute;
+        top: 0;
+        left: 0;
+        box-shadow: inset 0 0 25px rgba(0,0,0,.5);
+        opacity: 1;
+        transition: .8s;
+    }
+    .card:hover .pic::after{
+        opacity: 0;
+    }
+
+    /* 文字區塊樣式 start*/
+    .card .txt{
+        width: 300px;
+        height: 400px;
+        background-color: #fefefe;
+        position: absolute;
+        top: 0;
+        right: 0;
+        box-sizing: border-box;
+        display: flex;
+        flex-flow: column nowrap;
+        padding: 20px;
+    }
+    .card .txt h2{
+        font-weight: 900;
+        font-size: 32px;
+        padding: 8px 0;
+    }
+    .card .txt p{
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 28px;
+        padding-bottom: 4px;
+    }
+    .card .txt .btn{
+        display: inline-block;
+        text-decoration: none;
+        color: #333;
+        font-size: 14px;
+        padding: 8px 16px;
+        border: 1px solid rgb(47, 165, 243);
+        border-radius: 200px;
+        margin-top: auto;
+        align-self: flex-end;
+        transition: .3s
+    }
+    .card .txt .btn:hover{
+        background-color: rgb(47, 165, 243);
+        color: #fff;
+        font-weight: 700;
+    }
+    /* 文字區塊樣式 end */
+    
+    /* 側邊navbar  start */
+    .openMenu{
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 6%;
+        height: 100vh;
+        
+    }
+    .openMenu .openMenu__icon{
+        width: 50%;
+        margin: 5vh auto;
+        opacity: 1;
+        transition: .4s;
+        font-size: 48px;
+        font-weight: 900;
+        color: rgb(16, 80, 163);
+        text-shadow: 0 2px 7px rgba(100,100,100,.4);
+    }
+    .openMenu:hover .openMenu__icon{
+        opacity: 0;
+    }
+    .openMenu .navbar{
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 6%;
+        background-color: rgba(0,0,0,.9);
+        transform: translateX(100%);
+        transition: .8s;
+    }
+    .openMenu:hover  .navbar{
+        width: 6%;
+        transform: translateX(0);
+    }
+    .navbar ul{
+        display: flex;
+        margin-top: 15vh;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+    .navbar ul li a{
+        display: inline-block;
+        vertical-align: middle;
+        width: 100%;
+        height: 40px;
+        font-size: 24px;
+        padding: 8px 0;
+        line-height: 40px;
+        color: #fefefe;
+        width: 100%;
+        position: relative;
+        transition: .3s;
+    }
+    .navbar ul li a:hover{
+        background-color: rgb(47, 165, 243);
+        box-shadow: inset 0 0 20px rgb(12, 86, 224);
+    }
+    /* 側邊navbar  end */
+    
+    
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <!-- start navbar -->
+        <div class="openMenu">
+            <div class="openMenu__icon">></div>
+            <div class="navbar">
+                <div class="close"></div>
+                <ul>
+                    <li><a href="#">皮卡丘</a></li>
+                    <li><a href="#">波克比</a></li>
+                    <li><a href="#">火球鼠</a></li>
+                    <li><a href="#">木木梟</a></li>
+                    <li><a href="#">百變怪</a></li>
+                    <li><a href="#">草苗龜</a></li>
+                </ul>
+            </div>
+        </div>
+
+
+
+        <!-- end navbar -->
+
+
+
+
+        <!-- start card -->
+        <div class="card">
+            <div class="pic">
+                <img src="https://www.vscinemas.com.tw/vsweb/upload/film/film_20190828002.jpg" alt="">
+            </div>
+            <div class="txt">
+                <h2>返校</h2>
+                <p>1962年寂寥而肅殺的時代，翠華中學高三生方芮欣，意外與輔導老師張明暉相戀，在問題叢生的家庭及學校中，他成為她唯一的出路。追求自由的張明暉，另與師生殷翠涵、魏仲廷等人組織讀書會，研讀禁書，雖為高壓校園帶來一線呼吸的空間，卻也冒著生死攸關的風險。</p>
+                <a href="#" class="btn">more</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="pic">
+                <img src="https://www.vscinemas.com.tw/vsweb/upload/film/film_20190729008.jpg" alt="">
+            </div>
+            <div class="txt">
+                <h2>天氣之子</h2>
+                <p>高一那年夏天，帆高（醍醐虎汰朗 配音）離開位在離島的家鄉，獨自一人來到東京，拮据的生活迫使他不得不找份工作，最後來到一間專門出版奇怪超自然刊物的出版社擔任寫手。不久，東京開始下起連日大雨，彷彿暗示著帆高不順遂的未來，</p>
+                <a href="#" class="btn">more</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="pic">
+                <img src="https://www.vscinemas.com.tw/vsweb/upload/film/film_20190820001.jpg" alt="">
+            </div>
+            <div class="txt">
+                <h2>妒火的詛咒-娜迦</h2>
+                <p>平靜的東北村莊，幾周以來不斷發生駭人聽聞的殺人事件，死者各個面目猙獰、死狀悽慘。憤怒又害怕的村長和村民們議論紛紛、憶起多年前「娜迦發怒毀村事件」，巫師指稱平日侍奉娜迦神殿的索伊就是娜迦的化身，為免去娜迦蛇后再次大開殺戒，村民決議動用私刑、火燒索伊。</p>
+                <a href="#" class="btn">more</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="pic">
+                <img src="https://www.vscinemas.com.tw/vsweb/upload/film/film_20190828001.jpg" alt="">
+            </div>
+            <div class="txt">
+                <h2>星際救援</h2>
+                <p>由布萊德彼特飾演一名航太工程師，為了尋找多年前啟程外太空尋找外星智慧生物，失蹤在茫茫宇宙的父親，他不惜跨越宇宙星系間，只為了尋找父親可能仍生還的下落。</p>
+                <a href="#" class="btn">more</a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+</body>
+</html>

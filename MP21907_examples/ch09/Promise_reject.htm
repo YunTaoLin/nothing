@@ -1,0 +1,26 @@
+<meta charset="UTF-8" />
+<script>
+//Promise
+function myPromise(n) {
+    return new Promise((resolve, reject) => {
+		setTimeout(function(){
+			let num = n * n;
+			if (num > 1000) {
+				console.log("有抓到num="+num)
+				resolve("大於1000",num)
+			} else {
+				console.log("有抓到num="+num)
+				reject("小於等於1000",num)
+			}
+		}, 3000);        
+    })
+}
+
+myPromise(100).then((resolveValue,num) => {
+  console.log("resolveValue=",resolveValue);
+  console.log("結果為"+num)
+}, (rejectValue,num) => {
+   console.log("rejectValue=",rejectValue);
+   console.log("結果為"+num)
+})
+</script>

@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html> 
+<head> 
+<meta charset="UTF-8">
+<title>改變元素樣式</title>
+<style>
+table{
+	background-color:#F6FEAA;
+}
+th{background-color:#118AB2;}
+td,th{
+	padding:10px;
+	text-align:center;
+}
+th{color:white}
+.colorbtn{width:30px; height:20px;}
+</style>
+<script>
+	function tableWidth(w){
+			let table = document.getElementById("myTable");
+			table.style.width=w; //方法一
+      // myTable.width=w;   //方法二
+      // table.setAttribute("width",w);  //方法三
+	}
+	function setTableColor(col){
+			let table = document.getElementById("myTable");
+			table.style.backgroundColor = col;
+	}
+</script>
+</head>
+<body>
+    <table id="myTable" cellspacing="2" cellpadding="2" border="1">
+     <tr id="Tr1"> 
+		<th>數學</th>
+		<th>英文</th>
+		<th>國文</th>
+     </tr>
+     <tr id="Tr2"> 
+        <td>90</td>
+        <td>60</td>
+        <td>80</td>
+     </tr>
+     <tr id="Tr2"> 
+        <td>80</td>
+        <td>86</td>
+        <td>98</td>
+     </tr>
+        </table><br>
+        改變表格寬度<br>
+          <button onclick="tableWidth('200px');">寬度200px</button>
+          <button onclick="tableWidth('300px');">寬度300px</button>
+        <p>
+        改變背景顏色<br>
+          <button class="colorbtn" onclick="setTableColor('#C7DFC5');" style="background-color:#C7DFC5;"></button>
+          <button class="colorbtn" onclick="setTableColor('#C1DBE3');" style="background-color:#C1DBE3;"></button>
+          <button class="colorbtn" onclick="setTableColor('#CEBACF');" style="background-color:#CEBACF;"></button>
+          <button class="colorbtn" onclick="setTableColor('#EBD2B4');" style="background-color:#EBD2B4;"></button>
+        </p>
+</body>
+</html>

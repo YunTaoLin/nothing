@@ -1,0 +1,19 @@
+<meta charset="UTF-8" />
+<script>
+var array1 = [1, 2, 3, 4];
+
+//無初始值
+var reduceArr = array1.reduce((acc, cur, idx, src) => {
+	  console.log(acc, cur, idx);
+	  return acc + cur;
+});
+console.log(reduceArr); // 1 + 2 + 3 + 4 = 10
+console.log("*********")
+//有初始值
+var reduceArr = array1.reduce((acc, cur, idx, src) => {
+	  console.log(acc, cur, idx);
+	  return acc + cur;
+}, 10 );   // 初始值10
+console.log(reduceArr); // 10 + 1 + 2 + 3 + 4 = 10
+</script>
+

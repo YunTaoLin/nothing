@@ -1,0 +1,18 @@
+<meta charset="UTF-8" />
+<script>
+var mySet = new Set([1, 2, 3, 3, 4, 5]);  
+
+console.log(mySet);  //3不重覆,故只有5個元素 {1, 2, 3, 4, 5} 
+
+console.log( mySet.has(2) );  //true
+
+mySet.delete(3);
+console.log(mySet);   //{1, 2, 4, 5}
+
+var iter = mySet.entries();
+console.log(iter.next().value); // [1, 1]
+
+mySet.clear();
+console.log(mySet);   //{}
+
+</script>

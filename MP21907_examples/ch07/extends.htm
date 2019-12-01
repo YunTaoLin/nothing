@@ -1,0 +1,36 @@
+﻿<meta charset="UTF-8" />
+<script>
+//person物件
+function person(username,eat) {
+    this.username = username;
+    this.food=eat;
+}
+
+person.prototype.run = function () {
+    console.log(this.username, "喜歡跑馬拉松!");
+};
+
+//student物件
+function student(user, eattest,classname) {
+  person.call(this,user,eattest);  // call person建構子函式
+  this.b = classname;
+}
+//擴展(extends)父類別
+student.prototype = Object.create(person.prototype);
+
+//子類別自己加study方法
+student.prototype.study = function () {
+    console.log(this.b+"的"+this.username+"正在用功念書!");
+};
+student.prototype.eatt = function () {
+    console.log("晚餐吃"+this.food);
+};
+
+
+var myPerson = new person("jennifer");  //person物件實體
+var myStudent = new student("Brian", "香蕉","三年一班");   //student物件實體
+myPerson.run();   //person的run()
+myStudent.run();  //person擴充來的run()
+myStudent.study();  //student自己的study()
+myStudent.eatt();
+</script>

@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>keyboard事件</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+請按下鍵盤按鍵
+<div id="msgshow"></div>
+<IMG SRC="images/17.jpg" WIDTH="200" id="myImg" BORDER="0">
+<script>
+var msg = document.querySelector('#msgshow');
+document.addEventListener("keydown", e => {
+	if (typeof e === 'object') {
+		let str="嘿!!您按下了 ";
+		switch (e.code) {
+			case "Space":
+				str += "空白鍵";
+				break;
+			case "AltLeft":
+				str += "左邊的Alt鍵";
+				break;
+			case "shiftKey":
+				str += "shift鍵";
+				break;
+			default:
+				str += String.fromCharCode(e.keyCode);
+		}
+		msg.innerHTML = str;
+	}
+});
+</script>
+</body>
+</html>

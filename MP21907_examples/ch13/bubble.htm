@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+<style>
+#one{width:200px;height:200px;background-color:#C7DFC5}
+#two{width:150px;height:150px;background-color:#FCE694}
+#three{width:100px;height:100px;background-color:#F6FEAA}
+</style>
+<head>
+<div id="one">one
+   <div id="two">two
+     <div id="three">three
+     </div>
+   </div>
+</div>
+<script>
+
+document.getElementById("one").addEventListener("click",function(){
+	console.log("one");
+	alert("one");
+});
+
+document.getElementById("two").addEventListener("click",function(){
+	console.log("two");
+	alert("two");
+});
+
+document.getElementById("three").addEventListener("click",function(){
+	console.log("three");
+	alert("three");	
+});
+</script>
+

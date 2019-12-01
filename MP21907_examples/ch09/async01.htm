@@ -1,0 +1,38 @@
+<meta charset="UTF-8" />
+<script>
+//async/await改寫Promise Chain
+
+
+
+function play1(n) {
+    return new Promise((resolve, reject) => {
+	  setTimeout(function(){		
+		console.log("play1 =",n*n);
+		resolve(n*n); 
+	  }, 3000);
+	})
+};
+function play2(n) {
+    return new Promise((resolve, reject) => {
+	  setTimeout(function () {
+		  console.log("play2 =",n+n);
+		  resolve(n+n);
+		}, 5000)
+	})
+};
+
+async function add1(x) {
+    try {
+	  let play1value = await play1(20);
+	  let play2value = await play2(play1value);
+	  console.log( x + play1value + play2value);
+	} catch(err) {
+		console.log(err); 
+    }
+}
+
+add1(10)
+</script>
+
+<!-- 原理：是先拿到參數後等時間到再執行，而不是時間到要開始執行時再引入參數 -->
+<!-- await 其實是拿到參數的時候就開始算，因此若前一個await還沒執行完，但函數裡有return，則第二個await就當作已經取得參數，而開始執行。 -->

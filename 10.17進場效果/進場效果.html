@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            height: 300vh;
+        }
+        
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: #ffa;
+            border: 4px solid #222;
+            position: absolute;
+            left: 40%;
+            top: 150Vh;
+            transition: 1s;
+        }
+        
+        .changecolor {
+            background-color: #faa;
+            transform: scale(1.5);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="test">123</div>
+    <script>
+        let test = document.getElementById('test')
+        let dis = test.offsetTop - window.innerHeight / 2 - test.clientHeight
+        document.addEventListener('scroll', function() {
+            if (window.scrollY < dis) {
+                test.classList.remove('changecolor')
+            } else if (window.scrollY >= dis + window.innerHeight / 2) {
+                test.classList.remove('changecolor')
+            } else {
+                test.classList.add('changecolor')
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+<meta charset="UTF-8" />
+<script>
+function func(x, y, callback){
+    let num = x * y;
+    callback(num);　　//傳回執行結果
+}
+
+func(10, 20, function(num){  //把函式當作參數傳遞
+   console.log("num=", num); 
+});　　　　
+</script>

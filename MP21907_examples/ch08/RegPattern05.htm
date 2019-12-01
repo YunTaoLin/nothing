@@ -1,0 +1,18 @@
+<meta charset="UTF-8" />
+<script>
+var target = "You never know"
+//index ---> "01234......"
+reg = /never/;    
+reg_y = /never/y;    //flag=y
+
+console.group("沒有加flag");
+console.log( target.match(reg) );
+console.groupEnd();
+
+console.group("flag=y");
+reg_y.lastIndex = 2;
+console.log( target.match(reg_y) );
+reg_y.lastIndex = 4;
+console.log( target.match(reg_y) );
+console.groupEnd();
+</script>

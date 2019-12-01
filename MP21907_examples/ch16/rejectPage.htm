@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>取消滑鼠右鍵功能</title>
+</head>
+<body>
+<div></div>
+<script>
+function click() {
+	 if (event.button==2) 
+		alert('禁止使用右鍵喔!!'); 	
+} 
+document.onmousedown=click;
+</script>
+</head>
+<body>
+<IMG SRC="images/butterfly.jpg" WIDTH="300" BORDER="0">
+</body>
+</html>

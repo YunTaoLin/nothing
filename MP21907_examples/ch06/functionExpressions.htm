@@ -1,0 +1,18 @@
+<script>
+//Function Expressions
+function checkflag(flag){  //函式宣告式
+	if (flag) {
+		var myfunc = function(a,b){    //函式表達式
+			return a + "+" + b + "=" + (a + b);
+	   };
+	}else{
+		var myfunc = function(a,b){   //函式表達式
+		    return a + "*" + b + "=" + (a * b);
+		};
+	}
+	console.log(myfunc(10,20))
+}
+
+checkflag(true);
+checkflag(false);
+</script>

@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html> 
+<head> 
+<meta charset="UTF-8">
+<title>NodeList</title> 
+<style>
+*{
+	font-size:20px;
+	font-family: Microsoft JhengHei;
+}
+div{
+	color:red;
+	border:1px solid red;
+	width:500px;
+	padding:10px;
+	text-align:center
+}
+</style>
+<script>
+function check()
+{
+	let result = document.getElementById("result");
+	let d1 = document.getElementById("div1");
+	result.value = "第一個子節點(firstChild)的nodeValue = " + d1.firstChild.nodeValue +"\n";
+
+	result.value += "第一個子節點(childNodes)的nodeValue = "+ d1.childNodes.item(1).firstChild.nodeValue+"\n";
+	result.value += "最後一個子節點(lastChild)的nodeType = "+ d1.lastChild.parentNode.nodeType+"\n";
+	result.value += "div1物件下一個的節點(nextSibling) = "+ d1.firstChild.nextSibling.getAttribute("name")+"\n";
+	result.value += "a1的父節點(parentNode) = "+document.getElementById("a1").parentNode.getAttribute("id")+"\n";
+
+
+	result.value += d1.firstChild.nextSibling.firstChild.nextSibling.firstChild.nodeValue;
+
+
+
+
+
+
+
+}
+</script>
+</head> 
+<body> 
+
+<input type="button" value="檢查節點關係" onclick="check()" value="556565"><br>
+<textarea cols="50" rows="9" id="result" ></textarea>
+
+<div id="div1">Coffee
+<a href="#" id="a1" name="888">這是a1 <span>555</span></a>
+<a href="#" id="a2">這是a2</a>
+<a href="#" id="a3">這是a3</a>
+
+</div>
+</body> 
+</html> 

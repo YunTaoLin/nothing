@@ -1,0 +1,210 @@
+/*global*/
+*{
+	position: relative;
+}
+html,body{
+	font-family: Arial;
+	box-sizing: border-box;
+}
+
+/*框線設定*/
+.container{
+	width: 1170px;
+	height: 100%;
+	margin: 0 auto;
+	border: 1px solid #fff;
+	padding: 0 15px;
+}
+.row{
+	margin-right: -15px;
+	margin-left: -15px;
+}
+
+
+.row:after{
+	content: "";
+	display: block;
+	clear: both;
+	height: 0;
+	visibility: hidden;
+	padding: 0 15px;
+}
+
+.col-1-2{
+	float: left;
+	width: 50%;
+	/*border: 1px solid #000;*/
+	box-sizing: border-box;
+	padding: 0 15px;
+}
+
+.col-1-3{
+	float: left;
+	width: 33.33333%;
+	/*border: 1px solid #000;*/
+	box-sizing: border-box;
+	padding: 0 15px;
+}
+
+
+.col-5-6{
+	float: left;
+	width: 83.33333%;
+	/*border: 1px solid #000;*/
+	box-sizing: border-box;
+	padding: 0 15px;
+}
+
+.col-1-6{
+	float: left;
+	width: 16.66666%;
+	/*border: 1px solid #000;*/
+	box-sizing: border-box;
+	padding: 0 15px;
+}
+
+
+/*custom*/
+.wrapper{
+	overflow: hidden;
+
+}
+.elements{
+	background-color: rgba(0,0,0,0.5);
+	border:1px solid #fff;
+	color: #fff;
+	border-radius: 10px;
+	padding: 10px;
+	font-size: 20px;
+}
+
+.givepadding{
+	padding-top:150px;
+	padding-bottom: 180px;
+}
+.main_bg{
+	background: linear-gradient(50deg,#ff4169 0,#7c26f8 100%);
+	/*background: url(666.jpg);*/
+	background-size:  contain;
+	position: fixed;
+	top:0;
+	width: 100%;
+	height: 100%;
+	/*display: inline-block;*/
+
+}
+
+/*navbar*/
+.navbar{
+	background-color: rgba(0,0,0,0.6);
+	position: fixed;
+	top: 0;
+	left:0;
+	width: 100%;
+	z-index: 50;
+}
+
+
+.navbar .elements{
+	height: 80px;
+}
+
+/*junbotron*/
+.junbotron .elements{
+	height:500px;
+}
+
+.junbotron{
+	border: 1px solid #000;
+	padding-top: 100px;
+	padding-bottom: 80px;
+}
+
+
+.whatsOn{
+	background-color: #fff;
+}
+
+.whatsOn .album .album-art{
+	float: left;
+	width: 50%;
+}
+
+.whatsOn .album .album-art .elements{
+	height: 300px;
+}
+
+/*alubm*/
+.albums .elements{
+	height: 300px;
+}
+
+.albums .phone-group .phone{
+	height: 730px;
+	width: 358px;
+	border: 5px solid #7c258f;
+	background-color: #fff;
+	border-radius: 40px;
+	margin-bottom: 30px;
+
+}
+
+.albums .phone-group {
+	position: absolute;
+	top:0;
+	right: 0;
+	transform: rotate(30deg) translate(185px,-510px);
+
+}
+
+.phone1 , .phone4{
+	margin-top: 200px;
+
+}
+
+
+
+
+
+
+/*device*/
+
+.device {
+	background-color: #222326;
+}
+
+.device .elements{
+	height: 300px;
+}
+
+
+
+/*subcriptions*/
+
+.subscriptions{
+	padding-bottom: 0;
+}
+.subscriptions .elements{
+	height: 800px;
+}
+
+
+
+/*footer*/
+.footer{
+	padding-top:80px;
+	padding-bottom: 50px;
+	background-color: #000;
+}
+
+.footer .elements{
+	height: 300px;
+}
+
+.footer .row-small .elements{
+	height: 40px;
+}
+
+.footer .row-small{
+	margin-top: 100px;
+}

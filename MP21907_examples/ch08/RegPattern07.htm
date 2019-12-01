@@ -1,0 +1,34 @@
+<meta charset="UTF-8" />
+<script>
+/*檢查西元日期
+西元年4個字元、月跟日1~2個字元*/
+reg =/^\d{4}\/\d{1,2}\/\d{1,2}$/;
+console.log(reg.test("2019/9/28"));  //true
+console.log(reg.test("108/09/28"));   //false--必須4個字母
+
+/*密碼稽核  
+1.長度為6~10
+2.第一個字母必須為英文字
+3.之後英文字母、數字、減號與底線均可*/
+reg = /^[a-zA-Z][\w-_]{5,10}$/;
+console.log(reg.test("A12345789101"));  //false--超過11個字元
+console.log(reg.test("12345678"));     //false--第一個字元必須是英文字母
+console.log(reg.test("B1234"));       //false--最少要6個字元
+console.log(reg.test("B_1234"));        //true
+
+//只允許中文
+reg = /^[\u4e00-\u9fff]{0,}$/;
+console.log(reg.test("您好"));     //true
+console.log(reg.test("您好abc"));  //false--只允許中文
+
+/*E-mail稽核
+1.允許大寫英文字母、小寫英文字母、0~9、減號與底線
+2.中間有一個@
+3.@後面允許小寫英文字母、0~9、減號與底線
+4.結尾有2個以上英文字母
+*/
+reg = /^[A-Za-z0-9-_]+(\.[A-Za-z0-9-_]+)*@[a-z0-9]+(\.[a-z0-9-_]+)*(\.[a-z]{2,})$/;
+console.log(reg.test("Abc.lee@gmail.com"));       //true
+console.log(reg.test("1ab_c@yahoo@com.tw"));  //false--只能有一個@
+console.log(reg.test("abc@yahoo.com.w"));     //false--結尾需有2個以上的英文字母
+</script>

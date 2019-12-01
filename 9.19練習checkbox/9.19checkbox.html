@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .radio-group input{
+            position:absolute;
+            opacity: 0;
+        }
+        .tab-item{
+            padding: 8px 16px;
+            display: inline-block;
+            background-color: #ccc;
+            /* margin: 0 4px; */
+            font-size: 24px;
+            border: 2px solid #ccc;
+            border-bottom: none;
+            position: relative;
+            bottom: -2px;
+        }
+        .context-group{
+            border: 2px solid #ccc;
+            padding: 5px;
+        }
+        .context-group .context{
+            display: none;
+        }
+        
+        .radio1:checked ~ .tab-group .tab-item1,
+        .radio2:checked ~ .tab-group .tab-item2,
+        .radio3:checked ~ .tab-group .tab-item3,
+        .radio4:checked ~ .tab-group .tab-item4,
+        .radio5:checked ~ .tab-group .tab-item5 {background-color: #fff;}
+
+        .radio1:checked ~ .context-group .context1,
+        .radio2:checked ~ .context-group .context2,
+        .radio3:checked ~ .context-group .context3,
+        .radio4:checked ~ .context-group .context4,
+        .radio5:checked ~ .context-group .context5 {display: block;}
+        
+    
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="radio-group">
+            <input type="radio" name="radio" class="radio1" id="1" checked>
+            <input type="radio" name="radio" class="radio2" id="2">
+            <input type="radio" name="radio" class="radio3" id="3">
+            <input type="radio" name="radio" class="radio4" id="4">
+            <input type="radio" name="radio" class="radio5" id="5">  
+            <div class="tab-group">
+                <label for="1" class="tab-item tab-item1">tab1</label>
+                <label for="2" class="tab-item tab-item2">tab2</label>
+                <label for="3" class="tab-item tab-item3">tab3</label>
+                <label for="4" class="tab-item tab-item4">tab4</label>
+                <label for="5" class="tab-item tab-item5">tab5</label>
+            </div>
+
+            <div class="context-group">
+                    <div class="context context1">1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, repudiandae.  </div>
+                    <div class="context context2">2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident dolorem ducimus est, repellendus exercitationem reiciendis.</div>
+                    <div class="context context3">3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Et accusamus impedit placeat.</div>
+                    <div class="context context4">4 Lorem ipsum dolor sit amet consectetur adipisicing elit. Error recusandae voluptatibus dolorum fugit!</div>
+                    <div class="context context5">5 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati illo dolor et itaque adipisci.</div>
+            </div>
+        </div>
+        
+
+
+
+
+    </div>
+</body>
+</html>

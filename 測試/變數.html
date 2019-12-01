@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+	<meta charset="utf-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="style3.css">
+
+</head>
+<body>
+	<div class="test">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti sunt tenetur dignissimos, consectetur, necessitatibus ullam in aperiam molestias quisquam, corporis, ad atque voluptate! Eius corporis rerum pariatur eligendi, magni iusto?</div>
+<!-- 	<a class="box-a"></a>
+	<a class="box-b"></a> -->
+<div id="666" class="box-a" onclick="test()"></div>
+<a href="#" class="box-c"></a>
+<div id="777" class="box-b"></div>
+
+
+<script>
+	// var close =  document.getElementById ("666");
+	function test(){
+		var target =  document.getElementById("777");
+		let styles = window.getComputedStyle(target);
+		let style = styles.getPropertyValue("display")
+		
+		if(style == "inline-block") {
+			target.style.display ="none";}
+		else if (style == "none") {
+			target.style.display ="inline-block";}
+	}
+
+	
+
+</script>
+
+</body>
+</html>

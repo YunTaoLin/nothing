@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html> 
+<head> 
+<meta charset="UTF-8">
+<title>position與relative</title> 
+<style>
+*{font-size:25px}
+.box1 {
+  display: inline-block;
+  width: calc(100% / 5);
+  height:  100px;
+  background: red;
+  color: white;
+}
+.box2 {
+  display: inline-block;
+  width:  calc(100% / 5);
+  height:  100px;
+  background: #0099cc;
+  color: white;
+  line-height:100px;
+  vertical-align:baseline;
+}
+#two {
+  position: relative;
+  top: 30px;
+  left: 30px;
+  background: #ffcc00;
+}
+#seven {
+  position: absolute;
+  top: 180px;
+  left: 150px;
+  background: #33ffcc;
+}
+</style>
+</head> 
+<body> 
+<div class="box1" id="one">1</div>
+<div class="box1" id="two">2</div>
+<div class="box1" id="three">3</div>
+<div class="box1" id="four">4</div>
+<div class="box2" id="five">5</div>
+<div class="box2" id="six">6</div>
+<div class="box2" id="seven">7</div>
+<div class="box2" id="eight">8</div>
+</body> 
+</html> 

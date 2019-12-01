@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>拼圖切版練習</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        .wrap {
+            width: 100%;
+        }
+        
+        .item {
+            float: left;
+            position: relative;
+        }
+        
+        .item img {
+            width: 100%;
+            vertical-align: middle;
+        }
+        
+        .item:first-of-type {
+            width: 50%;
+        }
+        
+        .item:first-of-type~.item {
+            width: 25%;
+        }
+        
+        .item .txt {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            padding: 20px;
+            text-align: center;
+            background-color: rgba(0, 0, 0, .6);
+            opacity: 0;
+            color: #fefefe;
+            transition: .8s;
+        }
+        
+        .item:hover .txt {
+            opacity: 1;
+        }
+        
+        .item .txt h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .item .txt p {
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="item">
+            <div class="pic">
+                <img src="https://picsum.photos/id/684/600/400" alt="">
+            </div>
+            <div class="txt">
+                <h2>標題</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente iure consequuntur unde quibusdam ut magni magnam, fugit tempore optio veritatis laboriosam perspiciatis eius molestias modi accusamus. A molestiae harum tempora?</p>
+            </div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <img src="https://picsum.photos/id/684/600/400" alt="">
+            </div>
+            <div class="txt">
+                <h2>標題</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente iure consequuntur unde quibusdam ut magni magnam, fugit tempore optio veritatis laboriosam perspiciatis eius molestias modi accusamus. A molestiae harum tempora?</p>
+            </div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <img src="https://picsum.photos/id/684/600/400" alt="">
+            </div>
+            <div class="txt">
+                <h2>標題</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente iure consequuntur unde quibusdam ut magni magnam, fugit tempore optio veritatis laboriosam perspiciatis eius molestias modi accusamus. A molestiae harum tempora?</p>
+            </div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <img src="https://picsum.photos/id/684/600/400" alt="">
+            </div>
+            <div class="txt">
+                <h2>標題</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente iure consequuntur unde quibusdam ut magni magnam, fugit tempore optio veritatis laboriosam perspiciatis eius molestias modi accusamus. A molestiae harum tempora?</p>
+            </div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <img src="https://picsum.photos/id/684/600/400" alt="">
+            </div>
+            <div class="txt">
+                <h2>標題</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente iure consequuntur unde quibusdam ut magni magnam, fugit tempore optio veritatis laboriosam perspiciatis eius molestias modi accusamus. A molestiae harum tempora?</p>
+            </div>
+        </div>
+
+
+
+    </div>
+</body>
+
+</html>

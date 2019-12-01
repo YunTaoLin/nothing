@@ -1,0 +1,40 @@
+<meta charset="UTF-8" />
+<script>
+
+var target = "There's a hero.If you look inside your heart.You don't have to be afraid of what you are.There's an answer If you reach into your soul And the sorrow that you know will melt away."
+
+//you出現幾次
+console.group("查詢某字出現次數")
+reg = /you\b/gi;   
+var result=target.match(reg);
+console.log( result );
+console.log("you 出現", result.length ,"次");
+console.groupEnd("查詢某字出現次數")
+
+//用 he 取代 you
+console.group("用he取代you")
+reg = /you\b/gi;   
+var result=target.replace(reg,"he");
+console.log( result );
+console.groupEnd("用he取代you")
+
+//找出不重覆的單字
+console.group("找出不重覆的單字")
+var new_str=target.split(/\s|\./g);
+new_str.pop();  //刪除最後一個元素
+console.log("全部有",new_str.length,"個字");
+
+var result = new Set(new_str);
+console.log(result);
+console.log("不重覆的字有",result.size,"個");
+console.groupEnd("找出不重覆的單字")
+
+//找出不重覆的單字及出現次數
+console.group("找出不重覆的單字及出現次數")
+var counter = {};
+new_str.forEach(function(x) { 
+    counter[x] = (counter[x] || 0) + 1; 
+});
+console.log(counter);
+console.groupEnd("找出不重覆的單字及出現次數")
+</script>

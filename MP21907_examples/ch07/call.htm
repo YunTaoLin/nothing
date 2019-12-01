@@ -1,0 +1,19 @@
+<script>
+function calA() 
+{ 
+    this.x = 100;
+	this.y = 50;
+	this.add = function(){ 
+        console.log( this.x + this.y ); 
+    } 
+} 
+function calB() {
+	 this.x = 10;
+	 this.y = 30;
+} 
+var ca = new calA(); 
+var cb = new calB();
+
+ca.add.call(cb);   //40
+
+</script>

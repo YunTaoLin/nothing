@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-Tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>json-sever練習</title>
+    <style>
+        * {
+            list-style: none;
+            text-decoration: none;
+            font-family: '微軟正黑體';
+        }
+        
+        #list {
+            padding: 20px 50px;
+            background-color: #ccc;
+            width: 500px;
+            height: 40vh;
+            overflow: auto;
+        }
+        
+        #list li {
+            margin-bottom: 8px;
+            font-size: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #333;
+        }
+    </style>
+</head>
+<p>來源：　<span><a href="https://scidm.nchc.org.tw/dataset/382000000a-000523/resource/3a4de7f3-4252-462f-961c-c361baafcad6" target="_blank">新北市NewTaipei熱點-新莊區</a></span></p>
+<div id="postarea">
+    <input type="text" placeholder="地區名稱" name="spot_name">
+    <button>新增資料</button>
+</div>
+
+<ul id="list"></ul>
+<div id="delarea">
+    <input type="text" name="id" placeholder="編號">
+    <button>刪除資料</button>
+</div>
+
+<body>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+    <script src="test.js"></script>
+</body>
+
+</html>

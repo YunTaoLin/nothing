@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>網頁保護密技</title>
+<script LANGUAGE="JavaScript"> 
+function click() { 
+	if (event.button==2 || event.button==4) 
+	{
+		alert('禁止使用右鍵喔!!');
+	} 
+
+	if(event.ctrlKey){
+		switch(event.keyCode){
+		 case 65:alert('禁止按下Ctrl+A!!');break;
+		 case 67:alert('禁止按下Ctrl+C!!');break;
+		}
+	}
+
+}
+
+document.addEventListener('keydown', click)
+document.addEventListener('mousedown', click)
+
+</script>
+</head>
+<body>
+<IMG SRC="images/pic1.jpg" WIDTH="300" BORDER="0">
+</body>
+</html>

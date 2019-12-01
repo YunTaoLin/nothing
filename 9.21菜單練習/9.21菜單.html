@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>菜單練習</title>
+    <style>
+    *{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        font-family: '微軟正黑體', 'Arial Narrow', Arial, sans-serif;
+    }
+    header{
+        width: 100%;
+        background-color: #333;
+        padding: 0 20px;
+        display: flex;
+        justify-content: center;
+
+    }
+    .menu__group ul{
+        display: flex;
+    }
+
+    .menu__group ul li{
+        margin: 0;
+        position: relative;
+    }
+    .menu__group  ul li a{
+         color: #fefefe;
+         display: inline-block;
+         vertical-align: middle;
+         line-height: 50px;
+         font-size: 20px;
+         width: 6em;
+         height: 50px;
+         text-decoration: none;
+         transition: .3s;
+         text-align: center;
+    }
+
+    .menu__group ul li a:hover{
+        background-color: rgb(255, 163, 24);
+    }
+    .menu__group ul li ul{
+        position:absolute;
+        width:100%;
+        left: 0;
+        background-color: #333;
+        transition: .5s;
+        display: block;
+        height: 0;
+        overflow: hidden;
+    }
+    .menu__group ul li:hover ul {
+        height: 300px;
+    }
+    .menu__group ul li ul li{
+        display: block;
+    }
+    </style>
+</head>
+<body>
+    <header >
+        <div class="menu__group">
+            <ul>
+                <li>
+                    <a href="#">神奇寶貝</a>
+                    <ul>
+                        <li><a href="#">波克比</a></li>
+                        <li><a href="#">皮卡丘</a></li>
+                        <li><a href="#">水躍魚</a></li>
+                        <li><a href="#">link2</a></li>
+                        <li><a href="#">link2</a></li>
+                        <li><a href="#">link2</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">link</a>
+                    <ul>
+                        <li><a href="#">link2</a></li>
+                        <li><a href="#">link2</a></li>
+                        <li><a href="#">link2</a></li>
+                        <li><a href="#">link2</a></li>
+                        <li><a href="#">link2</a></li>
+                        <li><a href="#">link2</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">link</a>
+                    <ul>
+                        <li><a href="#">link2</a></li>
+                        <li><a href="#">link2</a></li>
+                        <li><a href="#">link2</a></li>
+                        <li><a href="#">link2</a></li>
+                        <li><a href="#">link2</a></li>
+                        <li><a href="#">link2</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">link</a>
+                    <ul>
+                        <li><a href="#">link2</a></li>
+                        <li><a href="#">link2</a></li>
+                        <li><a href="#">link2</a></li>
+                        <li><a href="#">link2</a></li>
+                        <li><a href="#">link2</a></li>
+                        <li><a href="#">link2</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">link</a>
+                    <ul>
+                        <li><a href="#">link2</a></li>
+                        <li><a href="#">link2</a></li>
+                        <li><a href="#">link2</a></li>
+                        <li><a href="#">link2</a></li>
+                        <li><a href="#">link2</a></li>
+                        <li><a href="#">link2</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">link</a>
+                    <ul>
+                        <li><a href="#">link2</a></li>
+                        <li><a href="#">link2</a></li>
+                        <li><a href="#">link2</a></li>
+                        <li><a href="#">link2</a></li>
+                        <li><a href="#">link2</a></li>
+                        <li><a href="#">link2</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+    </header>
+</body>
+</html>

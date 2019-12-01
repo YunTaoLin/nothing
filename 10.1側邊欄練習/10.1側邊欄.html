@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css' />
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        text-decoration: none;
+        font-family: '微軟正黑體';
+    }
+    
+    html,
+    body {
+        width: 100%;
+        height: 100vh;
+        /* overflow: hidden; */
+        background-color: rgb(49, 93, 114);
+    }
+    
+    .menu {
+        position: fixed;
+        padding: 50px 0;
+        width: 300px;
+        height: 100%;
+        background: linear-gradient(0deg, #3381b0, #c2196c);
+        display: flex;
+        flex-direction: column;
+        box-shadow: 10px 0 10px rgba(0, 0, 0, .4);
+        transform: translateX(-100%);
+        transition: .5s;
+    }
+    
+    .menu form {
+        display: flex;
+        top: 0;
+        left: 0;
+        margin: 0 10px 50px;
+        border-radius: 50px;
+        border: 1px solid #fefefe;
+    }
+    
+    .menu form input,
+    .menu form button {
+        border: none;
+        padding: 5px 15px;
+        background-color: transparent;
+        color: #fefefe;
+        font-size: 18px;
+    }
+    
+    .menu form input {
+        width: 230px;
+    }
+    
+    .menu form input:focus,
+    .menu form button:focus {
+        outline: none;
+    }
+    
+    .menu form button {
+        width: 50px;
+    }
+    
+    .nav a {
+        display: block;
+        padding: 10px;
+        color: #fefefe;
+        position: relative;
+        font-size: 18px;
+        line-height: 24px;
+        margin-top: 8px;
+    }
+    
+    .nav i {
+        transform: scale(0);
+        margin-right: -16px;
+        transition: .3s
+    }
+    
+    .nav a:hover i {
+        margin-right: 0px;
+        transform: scale(1);
+    }
+    
+    .nav li+li a:before {
+        content: '';
+        border-top: 1px solid #fefefe;
+        position: absolute;
+        right: 10px;
+        left: 10px;
+        top: 0;
+    }
+    /* -------控制menu--------- */
+    
+    #control-menu {
+        position: absolute;
+        transform: scale(0);
+    }
+    
+    #control-menu:checked+.menu {
+        transform: translateX(0);
+    }
+    
+    #control-menu-btn {
+        background-color: #000;
+        width: 50px;
+        height: 100px;
+        position: absolute;
+        right: -50px;
+        top: 50vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateY(-50%);
+        box-shadow: 5px 2px 5px rgba(0, 0, 0, .5);
+        cursor: pointer;
+        border-radius: 0 15px 15px 0;
+    }
+    
+    #control-menu-btn i {
+        color: #fefefe;
+    }
+</style>
+
+<body>
+    <input type="checkbox" id="control-menu">
+    <div class="menu">
+        <form class="search">
+            <input type="text">
+            <button><i class="fa fa-search"></i></button>
+        </form>
+        <ul class="nav">
+            <li>
+                <a href="#">
+                    <i class="fa fa-user"></i> 神秘的魔法石
+                </a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-gavel"></i>
+                消失的密室
+                 </a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-object-group"></i>
+                阿茲卡班的逃犯
+                 </a>
+            </li>
+            <li><a href="#"><i class="fa fa-globe"></i>
+                火盃的考驗</a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-globe-americas"></i>
+                鳳凰會的命令</a>
+            </li>
+        </ul class="nav">
+        <label for="control-menu" id="control-menu-btn"><i class="fa fa-search"></i></label>
+    </div>
+</body>
+
+</html>;

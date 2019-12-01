@@ -1,0 +1,10 @@
+<script>
+(function myFunc(){
+   console.log(this)
+})();
+
+var cat= function (){  
+   console.log(this)
+};
+var newCat= new cat()
+</script>

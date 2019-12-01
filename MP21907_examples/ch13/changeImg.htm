@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>mouse移過換圖</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<img src="images/13.jpg"  width="200" border="0" id="myImg">
+滑鼠移過來看看
+
+<script>
+var myImg = document.querySelector('#myImg');
+myImg.addEventListener("mouseover", e => {
+	myImg.src="images/14.jpg";
+})
+myImg.addEventListener("mouseout", e => {
+	myImg.src="images/13.jpg";
+})
+</script>
+</body>
+</html>

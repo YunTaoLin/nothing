@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Music Player</title>
+<style>
+#musicBoard {
+     width: 400px;
+     border: 10px solid 827081;
+     text-align: center;
+     margin: auto;
+     border-radius: 20px;
+	 background-color:#AEA3B0;
+}
+ul{	
+	background-color:#AEA3B0;
+	margin-left: 0; 
+	padding-left: 0;
+}
+li{
+	list-style-type:none;			
+	line-height:30px;
+	border-bottom:1px solid #FFFFFF; 
+}
+li:hover{
+	background-color:#990020;
+	color:#ffff00;
+	cursor:pointer;
+}
+li > span{
+	float:left;
+	font-family: Webdings;
+	font-size: 25px;
+	color:#330000;
+	cursor: pointer;
+}
+
+#random {
+	float:right;
+	font-family: Webdings;
+	font-size: 35px;
+	line-height:35px;
+	color:#FFFFFF;
+	cursor: pointer;
+	border:2px outset #c0c0c0;
+	margin:10px;
+	border-radius:10px;
+}
+#random:hover {			
+	border:2px inset #c0c0c0;
+}
+
+#top {
+	background-color: #604D53;
+	border-top-right-radius:20px;
+	border-top-left-radius:20px;
+	line-height:50px;
+	color:#ffffff;
+	padding-left:60px;
+ }
+
+ #bottom {
+	height:50px;
+	background-color: #827081;
+	border-bottom-right-radius:20px;
+	border-bottom-left-radius:20px;
+ }   
+audio{
+	outline:none;
+}
+
+</style>
+<script>
+	window.addEventListener('load', () => {
+		let musicSources = document.querySelector('#musicSources');
+		musicSources.addEventListener('click', musicTarget = (e) => {
+			if( e.target.tagName.toLowerCase() === 'li' ){
+				if(document.querySelector(".musicSpan")){
+					document.querySelector(".musicSpan").remove();
+				}
+				if(document.querySelector("audio")){
+					document.querySelector("audio").remove();
+				}
+				
+				let target = e.target;
+				const pn = target.innerText;
+				let span = document.createElement('span')  //建立span元件
+				span.className  = 'musicSpan';     //指定class名稱
+				span.innerHTML = '4';      //指定span裡的文字
+				target.appendChild(span);   //放入li元件
+				playMusic(pn);
+			}
+		});		
+	})
+
+	function playMusic(a){
+		let myAudio = document.createElement('audio');
+		myAudio.setAttribute("src", "music/" + a + ".mp3");
+		myAudio.setAttribute("controls", "controls");   //顯示撥放器
+		bottom.appendChild(myAudio);    //加入在id名稱為bottom的元件裡
+		myAudio.play();     //播放音樂
+	}
+
+	function randomPlay(){
+		let num = Math.floor(Math.random() * 6); 			//隨機數0~5
+		let randomLi = document.querySelectorAll('li')[num];
+		randomLi.click();   //觸發click事件
+	}
+	
+</script>
+</head>
+<body>
+    <div id="musicBoard">
+	     <div id="top">
+		 音樂選單 <span id="random" title="隨機播放" onclick="randomPlay()">~</span>
+		 </div>
+		 <ul id="musicSources">
+			 <li>Away</li>
+			 <li>Parkside</li>
+			 <li>School_Bus_Shuffle</li>
+			 <li>If_I_Had_a_Chicken</li>
+			 <li>After_the_Soft_Rains</li>
+			 <li>Always_Be_My_Unicorn</li>
+		 </ul>
+        <div id="bottom"></div>
+    </div>
+</body>
+</html>

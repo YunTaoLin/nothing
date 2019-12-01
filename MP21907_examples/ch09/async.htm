@@ -1,0 +1,20 @@
+<meta charset="UTF-8" />
+<script>
+//async/await
+
+function play1(n) {
+    return new Promise((resolve, reject) => {
+	  setTimeout(function(){		
+		console.log("play1 =",n*n);
+		resolve(n*n); 
+	  }, 5000);
+	})
+};
+
+async function add1(x) {
+  let play1value = await play1(20);  //µ¥«Ýplay1°õ¦æ
+  console.log("x + play1value =", x + play1value );
+}
+
+add1(10)
+</script>

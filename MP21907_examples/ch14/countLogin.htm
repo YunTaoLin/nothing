@@ -1,0 +1,57 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<meta charset="UTF-8">
+
+<title>登入次數</title>  
+<link rel=stylesheet type="text/css" href="color.css">
+<script>
+window.addEventListener('load', () => {
+		inputSpan.style.display='none';    /*隱藏輸入框及送出鈕*/
+		if(typeof(Storage)=="undefined")
+		{
+		    alert("Sorry!!您的瀏覽器不支援Web Storage");		
+		}else{		
+			/*判斷姓名是否已存入localStorage，已存入時才執行{}內的指令*/
+			if (localStorage.username) { 
+				/*localStorage.counter資料不存在時傳回undefined*/
+				if (!localStorage.counter) {  
+					localStorage.counter = 1;          /*初始值設為1*/
+				} else {
+					localStorage.counter++;      /*遞增*/
+				}	
+				btn_login.style.display='none';   /*隱藏登入按鈕*/
+				show_LocalStorage.innerHTML= localStorage.username+" 您好,這是您第"+localStorage.counter+"次來到網站~";
+			}
+			btn_login.addEventListener("click", login);
+			btn_send.addEventListener("click", sendok);
+			btn_logout.addEventListener("click", clearLocalStorage); 
+		}
+})
+
+function sendok(){		
+		localStorage.username=inputname.value;
+		location.reload();        /*重新載入網頁*/
+		
+}
+function login(){	
+	inputSpan.style.display='';	   /*顯示姓名輸入框及送出鈕*/
+}
+function clearLocalStorage(){		
+		localStorage.clear();         /*清空localStorage*/
+		show_LocalStorage.innerHTML="已成功登出!!";
+		btn_login.style.display='';  /*顯示登入按鈕*/
+		inputSpan.style.display='';   /*顯示姓名輸入框及送出鈕*/
+}
+</script> 
+</head> 
+<body>
+<button id="btn_login">登入</button>
+<button id="btn_logout">登出</button> <br />
+<img src="images/girl.jpg" /><br />
+<span id="inputSpan">請輸入您的姓名：<input type="text" id="inputname" value=""><button id="btn_send">送出</button></span><br />  
+<div id="show_LocalStorage"></div><br />
+    
+</body> 
+</body> 
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    html,body{
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        background-color: #41B784;
+        font-family: '微軟正黑體';
+    }
+    .container{
+        width: 70%;
+        height: 60vh;
+        /* border: 1px solid #333; */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    .show{
+        width: 100%;
+        height: 25%;
+        background-color: #333;
+        border-radius: 20px;
+        margin-bottom: 32px;
+        color: #fff;
+        text-align: center;
+    }
+    .show h2{
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 40px;
+        line-height: 72px;
+        padding: 0px 32px;
+        margin: 0;
+    }
+    .menu{
+        width: 100%;
+   
+        background-color: #fff;
+        border-radius: 20px;
+    }
+    .input{
+        width: 30%;
+        margin: 0 auto;
+        /* border:1px solid #222; */
+        padding: 20px 0;
+    }
+    .menu table tr{
+        display: flex;
+        justify-content: flex-start;
+        align-content: center;
+        padding: 24px 0;
+        font-size: 24px;
+        
+    }
+    .menu table td{
+        line-height: 32px;
+        vertical-align: middle;
+    
+    }
+    input{
+        border: 1px solid #333;
+        line-height: 32px;
+        font-size: 24px;
+        padding: 4px;
+    }
+    </style>
+</head>
+<body>
+    <div class="container" id="app">
+        <div class="show">
+            <h2>{{name}}，{{sex}}性，年齡為{{age}}， 
+                <br>{{ favor.length ? '喜歡'+favor.join('、')+'，' : ''  }}   {{member? '已' : '未'}}成為會員
+            </h2>
+        </div>
+       
+            <div class="menu">
+                <table class="input">
+                    <tr>
+                        <td class="title">姓名：</td>
+                        <td>
+                            <input type="text" v-model='name'>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="title">性別：</td>
+                        <td>
+                            <input type="radio" value="男" v-model='sex'>男
+                            <input type="radio" value="女" v-model='sex'>女
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="title">年齡：</td>
+                        <td>
+                            <select v-model='age' >
+                                <option>20歲以下</option>
+                                <option>21~30歲之間</option>
+                                <option>31~40歲之間</option>
+                                <option>41歲以上</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="title">興趣：</td>
+                        <td>
+                            <input type="checkbox" value="打電動" v-model='favor'>打電動
+                            <input type="checkbox" value="看漫畫" v-model='favor'>看漫畫
+                            <input type="checkbox" value="游泳" v-model='favor'>游泳
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="title">會員：</td>
+                        <td>
+                            <input type="checkbox" value="加入" v-model='member'>加入
+                        </td>
+                    </tr>
+
+                            
+                </table>
+                
+            </div>
+    </div>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js'></script>
+    <script src="all.js"></script>
+</body>
+</html>

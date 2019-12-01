@@ -1,0 +1,17 @@
+<meta charset="UTF-8" />
+<script>
+var target = "18, 2150, 310\n Sunday, Monday, Tuesday"
+
+var reg1 = /^18/gi;      //開頭符合sun
+var reg2 = /day$/g;     //結尾符合day
+var reg3= /Tuesday$/gi;        //比對符合3~4位數字
+var reg4= /310$/;        //比對符合3~4位數字
+var reg5= /310$/m;        //比對符合3~4位數字
+
+console.log(target.match(reg1));
+console.log(target.match(reg2));
+console.log(target.match(reg3));
+console.log(target.match(reg4));
+console.log(target.match(reg5));
+
+</script>

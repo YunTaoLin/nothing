@@ -1,0 +1,52 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-family: 'Noto Sans TC', sans-serif;
+    color: #e0e0e0;
+    letter-spacing: 10px;
+}
+.banner{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(105deg, #4267b2 50%, transparent 50%) center center / 100% 100% ,
+    url(3-120G9230019.jpg) right center / 60% auto;
+
+}
+.container{
+    height: 100%;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    
+
+}
+.text-group{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    
+
+}
+.text-group h1{
+    font-size: 80px;
+    border-bottom: 1px solid #FEFEFE;
+    padding-bottom: 0.2em;
+    margin-bottom: 0.2em;
+
+}
+.text-group h1 small{
+    display: block;
+    font-size: 53px;
+}
+.text-group h2{
+    font-size: 50px;
+}
+.text-group p{
+    font-size: 15px;
+    letter-spacing: 2px;
+    margin-bottom: 60px;
+}

@@ -1,0 +1,15 @@
+<meta charset="UTF-8" />
+<script>
+var target = "good morning"
+
+var reg1 = /good/;   //比對good字串
+var reg2 = /./;      //比對任一字元(預設只會傳回一個字元)
+var reg3 = /./g;     //g為全域模式，會傳回所有字元
+var reg4 = /i./;     //比對i加任一字元，會傳回in
+
+console.log(target.match(reg1));
+console.log(target.match(reg2));
+console.log(target.match(reg3));
+console.log(target.match(reg4));
+
+</script>

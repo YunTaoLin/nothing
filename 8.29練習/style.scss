@@ -1,0 +1,83 @@
+$baseSize: 12px;
+$baseLineSize: 10px;
+$sizeLevel: 4px;
+$paddingLevel: 1.2;
+
+%happy{
+    width: 100%;
+    background-color: #000;
+}
+//筆記: %+名稱 是專門用來繼承的class。不會被轉譯;
+//筆記: @function 參數都要寫$，return只回傳"值"，在CSS寫 屬性: 函式名稱(參數)
+//筆記: @mixin 類似函數 但可直接在裡面寫 某屬性:變數 也可引用函數做計算 回傳包含屬性+值
+
+@function font($level: 0) {
+  @if $level < 0 {
+    $level: 0;
+  }
+  @return $baseSize + $sizeLevel * round($level);
+}
+
+@function rhythm($size) {
+  @return ceil($size * $paddingLevel / $baseLineSize) * $baseLineSize;
+}
+
+@mixin font($level: 1, $line-height: auto) {
+  $size: font($level);
+  $line: rhythm($size);
+
+  font-size: $size;
+  @if $line-height == auto or $line-height < $line {
+    line-height: $line;
+  } @else {
+    line-height: $line-height;
+  }
+}
+
+@function line($count: 1, $baseLineHeight: 10px) {
+  @return $baseLineHeight * $count;
+}
+
+@for $i from 0 through 5{
+  .level#{$i}{
+    @include font($i);
+    margin: line($i/2) auto;
+  }
+}
+
+.test{
+    @extend %happy;
+    height: 666px;
+}
+
+.test2{
+    @extend %happy;
+    height: 33px;
+    line-height: line(2,20px);
+}
+
+.box{
+  width: 200px;
+  height: 200px;
+  background-color: #faa;
+}
+
+.move{
+  animation: move 30s linear 0s infinite normal none running;
+  position: absolute;
+  top: 1%;
+  left:45%;
+  
+}
+
+@keyframes move{
+  0% {
+    transform: rotate(.001deg) translate3d(1000px,10px,0);
+}
+50% {
+    transform: rotate(.001deg) translate3d(0,410px,0);
+}
+100% {
+    transform: rotate(.001deg) translate3d(-1000px,10px,0);
+}
+}

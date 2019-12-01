@@ -1,0 +1,21 @@
+<meta charset="UTF-8" />
+<script>
+//取得隨機浮點數
+function getRandFloat(min, max) {
+  return Math.random() * (max - min) + min; 
+}
+
+//取得隨機整數(含min不含max)
+function getRandInt(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
+//取得隨機布林值
+function getRandBool() {
+  return Math.random() >= 0.5;
+}
+
+console.log( getRandFloat(10, 20) )
+console.log( getRandInt(10, 20) )
+console.log( getRandBool() )
+</script>

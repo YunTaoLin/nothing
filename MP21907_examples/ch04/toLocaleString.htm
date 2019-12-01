@@ -1,0 +1,18 @@
+<script>
+var num = 1234567.89;
+
+//ar-EG 埃及 => ١٬٢٣٤٬٥٦٧٫٨٩
+console.log( num.toLocaleString('ar-EG') );  
+//de-DE 德國 => 1.234.567,89
+console.log( num.toLocaleString('de-DE') );  
+//中文數字 =>1,234,568
+console.log( num.toLocaleString('zh', { style: 'decimal', maximumFractionDigits:0  }) );  
+//中文百分比格式 => 123,456,789%
+console.log( num.toLocaleString('zh', { style: 'percent' }) ); 
+//新台幣符號 => NT$1,234,568
+console.log( num.toLocaleString('zh', { style: 'currency', currency:"TWD", minimumFractionDigits:0, maximumFractionDigits:0 }) ); 
+//英鎊符號 => £1,234,567.89
+console.log( num.toLocaleString('en-GB', { style: 'currency', currency:"GBP" }) ); 
+//最大有效位數 => 1,230,000
+console.log( num.toLocaleString('zh', { maximumSignificantDigits: 3 }) );
+</script>

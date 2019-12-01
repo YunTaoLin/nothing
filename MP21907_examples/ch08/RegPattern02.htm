@@ -1,0 +1,13 @@
+<meta charset="UTF-8" />
+<script>
+var target = "18, 2150, 310, Sunday, Monday, Tuesday"
+
+var reg1 = /[f-m]/gi;      //比對f、g、h、i、j、k、l、m字母
+var reg2 = /Sunday,+/g;     //比對Sunday後面有一個以上的逗號(,)
+var reg3=/\d{3,4}/g;        //比對有3~4位的數字
+
+console.log(target.match(reg1));
+console.log(target.match(reg2));
+console.log(target.match(reg3));
+
+</script>

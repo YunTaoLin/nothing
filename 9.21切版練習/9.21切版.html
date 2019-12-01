@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        font-family: '微軟正黑體';
+    }
+    .wrapper{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        background: linear-gradient(30deg,rgb(250, 127, 68), rgb(220, 149, 72));
+    }
+    .container{
+        width: auto;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+    }
+    .item{
+        width: 500px;
+        display: flex;
+        margin: 12px;
+        background-color: #fefefe;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 5px 15px 20px rgb(212, 30, 30,.2);
+    }
+    .item .pic{
+        width: 50%;
+        overflow: hidden;
+    }
+
+    .item .pic img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: scale(1);
+        transition: .8s;
+    }
+    .item .pic:hover img{
+        transform: scale(1.3)
+    }
+    .item .txt{
+        width: 50%;
+        padding: 8px 16px; 
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: top;
+    }
+    .item .txt h2{
+        font-weight: 900;
+        font-size: 24px;
+        padding: 4px 0;
+    }
+    .item .txt p{
+        font-weight: 500;
+        font-size: 16px;
+        padding-bottom: 4px;
+    }
+    .item .txt .btn{
+        display: inline-block;
+        text-decoration: none;
+        color: #333;
+        font-size: 14px;
+        padding: 8px 16px;
+        border: 1px solid #aaa;
+        border-radius: 200px;
+        margin-top: auto;
+        align-self: flex-end;
+        transition: .3s
+    }
+    .item .txt .btn:hover{
+        background-color: rgb(250, 127, 68);
+        color: #000;
+        font-weight: 700;
+    }
+
+
+    
+    
+    
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="item">
+                <div class="pic">
+                    <img src="https://picsum.photos/id/684/600/400" alt="">
+                </div>
+                <div class="txt">
+                    <h2>返校</h2>
+                    <p>1962年寂寥而肅殺的時代，翠華中學高三生方芮欣，意外與輔導老師張明暉相戀，在問題叢生的家庭及學校中，他成為她唯一的出路。追求自由的張明暉，另與師生殷翠涵、魏仲廷等人組織讀書會，研讀禁書，雖為高壓校園帶來一線呼吸的空間，卻也冒著生死攸關的風險。</p>
+                    <a href="#" class="btn">more</a>
+                </div>
+            </div>
+            <div class="item">
+                <div class="pic">
+                    <img src="https://picsum.photos/id/683/600/400" alt="">
+                </div>
+                <div class="txt">
+                    <h2>天氣之子</h2>
+                    <p>高一那年夏天，帆高（醍醐虎汰朗 配音）離開位在離島的家鄉，獨自一人來到東京，拮据的生活迫使他不得不找份工作，最後來到一間專門出版奇怪超自然刊物的出版社擔任寫手。不久，東京開始下起連日大雨，彷彿暗示著帆高不順遂的未來，</p>
+                <a href="#" class="btn">more</a>
+                </div>
+            </div>
+            <div class="item">
+                <div class="pic">
+                    <img src="https://picsum.photos/id/685/600/400" alt="">
+                </div>
+                <div class="txt">
+                    <h2>妒火的詛咒-娜迦</h2>
+                    <p>平靜的東北村莊，幾周以來不斷發生駭人聽聞的殺人事件，死者各個面目猙獰、死狀悽慘。
+                        憤怒又害怕的村長和村民們議論紛紛、憶起多年前「娜迦發怒毀村事件」，巫師指稱平日侍奉娜迦神殿的索伊就是娜迦的化身，為免去娜迦蛇后再次大開殺戒，村民決議動用私刑、火燒索伊。</p>
+                    <a href="#" class="btn">more</a>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+    </div>
+</body>
+</html>

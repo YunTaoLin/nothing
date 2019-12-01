@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+<style>
+#one{width:200px;height:200px;background-color:#C7DFC5}
+#two{width:150px;height:150px;background-color:#FCE694}
+#three{width:100px;height:100px;background-color:#F6FEAA}
+</style>
+<head>
+<div id="one">one
+   <div id="two">two
+     <div id="three">three
+     </div>
+   </div>
+</div>
+<script>
+
+document.getElementById("one").addEventListener("click",function(e){
+	console.log("one");
+	alert("one");
+},true);   //useCapture參數設定為true
+
+document.getElementById("two").addEventListener("click",function(e){
+	e.stopPropagation()
+	console.log("two");
+	alert("two");
+},true); //useCapture參數設定為true
+
+document.getElementById("three").addEventListener("click",function(e){
+	console.log("three");
+	alert("three");	
+},true); //useCapture參數設定為true
+</script>
+

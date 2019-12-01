@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html> 
+<head> 
+<meta charset="UTF-8">
+<title>calc計算</title> 
+<style>
+*{text-align:center}
+.box{
+	height: 300px;
+	line-height:300px;
+}
+#one{
+	float: right;
+	width: 20%;
+	background:#F6FEAA;
+}
+#two{
+	float: left;
+	width: 20%;
+	background:#FCE694;
+}
+#three{
+	width: calc(100% - (20%*2) - 2em);
+	margin: 0 auto;
+	background:#C7DFC5;
+}
+</style>
+</head> 
+<body> 
+	<div class="box" id="one">20%</div>
+	<div class="box" id="two">20%</div>
+	<div class="box" id="three">calc(100% - (20%*2) - 2em)</div>
+</body> 
+</html> 

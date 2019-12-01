@@ -1,0 +1,10 @@
+<meta charset="UTF-8" />
+<script>
+var person = { name: 'andy' };
+console.log("person", person.name);  //andy
+
+var student=person;  //shallow copy
+student.name="brian";
+console.log("student", student.name);  //brian
+console.log("person", person.name);  //brian
+</script>

@@ -1,0 +1,43 @@
+:root {
+	--bule:#007bff;
+}
+html{
+	font-size: 16px;
+}
+
+div{
+	background-color: var(--bule);
+}
+body{
+	width: 100%;
+	height: 10vh;
+}
+.test{
+	width: 100%;
+	height: 100%;
+	font-size: 1rem
+	
+}
+.box-a{
+	width: 200px;
+	height: 200px;
+	background-color: #faa;
+	display: inline-block;
+}
+
+.box-b{
+	width: 200px;
+	height: 200px;
+	display: inline-block;
+	background-color: #afa;
+}
+
+
+
+.box-c{
+	width: 20px;
+	height: 20px;
+	background-color: #aaf;
+	display: inline-block;
+}
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ajax練習</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            font-family: '微軟正黑體';
+        }
+        h1{
+            display: inline-block;
+            padding: 20px;
+            
+        }
+        button{
+            display: inline-block;
+            width: 300px;
+            font-size: 16px;
+            font-weight: 700;
+            color: #fefefe;
+            background-color: rgba(5, 53, 0, 0.466);
+            border: 1px solid #000;
+            cursor: pointer;
+            padding: 4px 0px;
+            border-radius: 10px;
+            box-shadow:  0 2px 8px rgba(100,100,100,.5);
+        }
+        button:focus{
+            outline: none;
+        }
+        button:active{
+            box-shadow:  0 2px 1px rgba(100,100,100,.5);
+        }
+        ul{
+            padding: 30px;
+        }
+        ul li{
+            width: 50%;
+            margin: 16px 0;
+            font-size: 18px;
+            border-bottom: 1px solid #ccc;
+
+        }
+        .hideMe{
+            animation: hideMe .8s;
+            animation-fill-mode: forwards;
+        }
+        @keyframes hideMe  {
+            0%{
+                opacity: 1;
+                transform: scale(1);
+                visibility: visible;
+            }
+            100%{
+                opacity: 0;
+                transform: scale(.8);
+                visibility: hidden;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h1>動物列表</h1>
+        <button id="btn" class="">新增三筆動物</button>
+        
+        <ul id="animal-list">
+  
+        </ul>
+    </div>
+    <script src="ajax.js"></script>
+</body>
+</html>
