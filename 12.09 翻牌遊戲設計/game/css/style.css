@@ -1,0 +1,114 @@
+* {
+    font-family: "微軟正黑體";
+}
+
+#box_num {
+    height: 400px;
+    width: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -200px;
+    margin-left: -270px;
+}
+
+button,
+.div_num {
+    border-radius: 4px;
+    box-shadow: 0px 10px 14px -7px #3e7327;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 50px;
+    text-align: center;
+    line-height: 100px;
+    padding: 6px 12px;
+    background: linear-gradient(225deg, #f9d423 0%, #ff4e50 70%);
+    width: 150px;
+    height: 100px;
+    float: left;
+    margin: 10px;
+    transition: all .8s;
+}
+
+.div_num:hover {
+    background: linear-gradient(225deg, #ecd356 0%, #fb5c5e 70%);
+}
+
+#start_play {
+    display: flex;
+    align-items: center;
+    width: 540px;
+    margin: 0px auto;
+    padding: 80px;
+    font-size: 36px;
+}
+
+button {
+    width: 120px;
+    height: 50px;
+    font-size: 15px;
+    padding: 0px;
+    line-height: 20px;
+}
+
+#mask {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: table;
+    position: absolute;
+    text-align: center;
+    background-color: rgba(80, 80, 80, 0.5);
+}
+
+#maskcell {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 2em;
+    font-weight: 700;
+    color: #103879;
+    margin-bottom: 12px;
+}
+
+#playMask {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    padding: 40px 0;
+    font-size: 2em;
+    font-weight: 700;
+    background-color: rgba(80, 80, 80, 0.1);
+}
+
+#reset {
+    background-color: #194981;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    border: 1px solid #333;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 12px 32px;
+    text-decoration: none;
+    outline: none;
+    font-size: 20px;
+    margin-top: 12px;
+    transition: .3s;
+}
+
+#reset:hover {
+    background-color: #0f3868;
+}
+
+#reset:active {
+    position: relative;
+    top: 1px;
+}
