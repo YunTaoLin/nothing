@@ -154,26 +154,10 @@
             transform: scale(1);
             transition: 2s .3s;
         }
-        /* .card .pic:hover img {
-            transform: scale(1.2);
-        } */
-        /* .card .pic::after {
-            content: '';
-            height: 100%;
-            width: 100%;
-            background-color: rgba(0, 0, 0, .6);
-            position: absolute;
-            top: 0;
-            left: 0;
-            box-shadow: inset 0 0 25px rgba(0, 0, 0, .5);
-            opacity: 1;
-            transition: .8s;
-        } */
         
         .card:hover .pic::after {
             opacity: 0;
         }
-        /* 文字區塊樣式 start*/
         
         .card .txt {
             width: 300px;
@@ -302,7 +286,8 @@
             let rotateHandler = document.getElementById('rotateHandler')
             let page = 0;
             let toPage = 0;
-            left.addEventListener('click', function() {
+
+            function toLeft() {
                 toPage += 72;
                 let id = setInterval(function() {
                     console.log(id)
@@ -310,19 +295,19 @@
                     rotateHandler.style.transform = "rotateY(" + page + "deg)";
                     if (page >= toPage) clearInterval(id);
                 }, 5)
-            })
+            }
 
-
-            right.addEventListener('click', function() {
+            function toRight() {
                 toPage -= 72;
                 let id = setInterval(function() {
                     page--;
                     rotateHandler.style.transform = "rotateY(" + page + "deg)";
                     if (page <= toPage) clearInterval(id);
                 }, 5)
-
-
-            })
+            }
+            left.addEventListener('click', toLeft)
+            right.addEventListener('click', toRight)
+                // setInterval(toRight, 10000);
         </script>
 
 
